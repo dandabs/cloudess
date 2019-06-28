@@ -1,0 +1,6 @@
+name: EssentialsC
+version: DEV
+main: net.danielonline.Essentials.Essentials
+load: STARTUP
+author: dandabs
+website: https://ccessentials.glitch.me
