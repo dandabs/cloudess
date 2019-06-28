@@ -8,15 +8,15 @@ import org.bukkit.entity.Player;
 public class C_OPme implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
-        if(!sender.hasPermission("cc.player.opme")) {
+        if (!sender.hasPermission("cc.player.opme")) {
             sender.sendMessage(C.Prefix + C.Red + "No permission");
             return false;
-        } else if(!sender.hasPermission("cc.player.opne.bypass")) {
+        } else if (!sender.hasPermission("cc.player.opne.bypass")) {
             sender.sendMessage(C.Prefix + C.Red + "But you already ARE op..." + C.DGray + C.Italics + "(if you weren't, you would be kicked by now)");
             return false;
         } else {
             // opme time
-            Player p = (Player)sender;
+            Player p = (Player) sender;
             p.getWorld().createExplosion(p.getLocation(), 0.0F);
             p.setFireTicks(20);
             p.sendMessage(C.Prefix + C.Reset + "One moment...");
@@ -25,4 +25,5 @@ public class C_OPme implements CommandExecutor {
             Bukkit.broadcast(C.Prefix + C.Aqua + p.getDisplayName() + C.DAqua + " was gullible enough to do " + C.Aqua + "/opme", "cc.player.opme.alert");
             return true;
         }
+    }
 }
