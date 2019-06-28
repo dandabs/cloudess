@@ -1,12 +1,15 @@
 package net.danielonline.Essentials;
 
 import net.danielonline.Essentials.utils.*;
+import net.danielonline.Essentials.commands.*;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.command.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;
@@ -42,6 +45,11 @@ public class Essentials extends JavaPlugin {
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        // commands
+        this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
+        this.getCommand("info").setExecutor((CommandExecutor)new C_info());
+        this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
     }
 
     @Override
