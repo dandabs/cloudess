@@ -1,5 +1,7 @@
 package net.danielonline.Essentials;
 
+import net.danielonline.Essentials.utils.*;
+
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -19,11 +21,14 @@ import java.util.Map;
 
 import me.edge209.OnTime.OnTimeAPI;
 
+import static org.bukkit.Bukkit.getConsoleSender;
+
 public class Essentials extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("onEnable is called!");
+        //getLogger().info("onEnable is called!");
+        getConsoleSender().sendMessage(C.Aqua + "Cloud" + C.DAqua + "ess" + C.White + " has been enabled!");
         registerEvents();
         try {
             registerWeb();
@@ -41,7 +46,8 @@ public class Essentials extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        getLogger().info("onDisable is called!");
+        //getLogger().info("onDisable is called!");
+        getConsoleSender().sendMessage(C.Aqua + "Cloud" + C.DAqua + "ess" + C.White + " has been disabled!");
         try {
             stopGet();
         }
@@ -58,14 +64,11 @@ public class Essentials extends JavaPlugin {
 
         public void handle(HttpExchange exc) throws IOException { String response = "This is the reponse";
             exc.sendResponseHeaders(200, response.length());
-
             Map<String, String> params = Essentials.queryToMap(exc.getRequestURI().getQuery());
             //System.out.println("Username:" + (String)params.get("u"));
             //System.out.println("Rank:" + (String)params.get("r"));
             //System.out.println("Message:" + (String)params.get("m"));
-
-            Bukkit.broadcastMessage(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "Discord" + ChatColor.GRAY + " | " + ChatColor.DARK_AQUA + (String)params.get("r") + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + (String)params.get("u") + ChatColor.WHITE + " : " + ChatColor.WHITE + (String)params.get("m"));
-
+            Bukkit.broadcastMessage(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "Discord" + ChatColor.GRAY + " | " + ChatColor.DARK_AQUA + (String)params.get("r") + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + (String)params.get("u") + ChatColor.WHITE + " » " + ChatColor.WHITE + (String)params.get("m"));
             //System.out.println(ChatColor.AQUA + "[" + ChatColor.DARK_PURPLE + "Discord" + ChatColor.AQUA + " | " + ChatColor.RED + (String)params.get("r") + ChatColor.DARK_PURPLE + "] " + ChatColor.GOLD + (String)params.get("u") + ChatColor.AQUA + " >> " + ChatColor.WHITE + (String)params.get("m"));
 
             OutputStream os = exc.getResponseBody();
