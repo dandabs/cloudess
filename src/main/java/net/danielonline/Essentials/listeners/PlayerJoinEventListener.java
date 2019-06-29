@@ -1,23 +1,24 @@
-package net.danielonline.Essentials;
+package net.danielonline.Essentials.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerBedEnterEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PlayerBedEnterEventListener implements Listener {
+public class PlayerJoinEventListener implements Listener {
 
     private final String USER_AGENT = "Mozilla/5.0";
 
-    public PlayerBedEnterEventListener() {}
+    public PlayerJoinEventListener() {}
 
     @EventHandler
-    public void onPlayerBedEnter(PlayerBedEnterEvent event) {
+    public void onPlayerJoin(PlayerJoinEvent event)
+    {
         try {
             sendGet(event.getPlayer());
         }
@@ -28,7 +29,7 @@ public class PlayerBedEnterEventListener implements Listener {
 
     private void sendGet(Player player) throws Exception
     {
-        String url = "https://ccessentials.glitch.me/api/inbed/" + player.getName();
+        String url = "https://ccessentials.glitch.me/api/join/" + player.getName();
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection)obj.openConnection();
@@ -39,7 +40,7 @@ public class PlayerBedEnterEventListener implements Listener {
 
         con.setRequestProperty("User-Agent", "Mozilla/5.0");
 
-
+        int responseCode = con.getResponseCode();
 
 
 

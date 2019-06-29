@@ -1,41 +1,34 @@
-package net.danielonline.Essentials;
+package net.danielonline.Essentials.listeners;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerBedEnterEvent;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PlayerChatEventListener implements Listener {
+public class PlayerBedEnterEventListener implements Listener {
 
     private final String USER_AGENT = "Mozilla/5.0";
 
-    public PlayerChatEventListener() {}
+    public PlayerBedEnterEventListener() {}
 
     @EventHandler
-    public void onPlayerChat(AsyncPlayerChatEvent event) { Player player = event.getPlayer();
+    public void onPlayerBedEnter(PlayerBedEnterEvent event) {
         try {
-            sendGet(player, event.getMessage());
+            sendGet(event.getPlayer());
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("player has chatted");
     }
 
-
-
-
-
-    private void sendGet(Player player, String message)
-            throws Exception
+    private void sendGet(Player player) throws Exception
     {
-        String url = "https://ccessentials.glitch.me/api/message/" + player.getName() + "/" + message;
+        String url = "https://ccessentials.glitch.me/api/inbed/" + player.getName();
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection)obj.openConnection();
@@ -46,7 +39,7 @@ public class PlayerChatEventListener implements Listener {
 
         con.setRequestProperty("User-Agent", "Mozilla/5.0");
 
-        int responseCode = con.getResponseCode();
+
 
 
 

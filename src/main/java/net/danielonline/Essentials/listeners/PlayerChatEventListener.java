@@ -1,35 +1,41 @@
-package net.danielonline.Essentials;
+package net.danielonline.Essentials.listeners;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PlayerJoinEventListener implements Listener {
+public class PlayerChatEventListener implements Listener {
 
     private final String USER_AGENT = "Mozilla/5.0";
 
-    public PlayerJoinEventListener() {}
+    public PlayerChatEventListener() {}
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event)
-    {
+    public void onPlayerChat(AsyncPlayerChatEvent event) { Player player = event.getPlayer();
         try {
-            sendGet(event.getPlayer());
+            sendGet(player, event.getMessage());
         }
         catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("player has chatted");
     }
 
-    private void sendGet(Player player) throws Exception
+
+
+
+
+    private void sendGet(Player player, String message)
+            throws Exception
     {
-        String url = "https://ccessentials.glitch.me/api/join/" + player.getName();
+        String url = "https://ccessentials.glitch.me/api/message/" + player.getName() + "/" + message;
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection)obj.openConnection();

@@ -3,4 +3,20 @@ version: DEV
 main: net.danielonline.Essentials.Essentials
 load: STARTUP
 author: dandabs
+authors:
+  - pyxxl.
 website: https://ccessentials.glitch.me
+commands:
+  opme:
+    description: Get free OP here. Go on, don't you trust me?
+    aliases:
+      - opget
+    permission: cc.player.opme
+  info:
+    description: Information about Cloudess
+    aliases:
+      - cloudess
+      - cc
+      - about
+    permission: cc.player.info
+
