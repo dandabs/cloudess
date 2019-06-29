@@ -10,6 +10,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+//import litebans.api.*;
+
 public class PlayerLeaveEventListener implements Listener {
 
     private final String USER_AGENT = "Mozilla/5.0";
@@ -25,6 +27,11 @@ public class PlayerLeaveEventListener implements Listener {
             e.printStackTrace();
         }
     }
+
+    /*@Override
+    public void entryAdded(Entry entry) {
+
+    }*/
 
     private void sendGet(Player player) throws Exception
     {
