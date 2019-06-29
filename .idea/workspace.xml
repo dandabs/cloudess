@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Statics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/H.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/W.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="Utilities + Cleanup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/E.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Statics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Statics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials$TestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials$TestHandler2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/PlayerBedEnterEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/PlayerBedLeaveEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/PlayerChatEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/PlayerJoinEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/PlayerLeaveEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,14 +33,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state relative-caret-position="401">
+              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
                 <element signature="e#1138#1139#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Statics.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#436#437#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,14 +103,15 @@
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/PlayerJoinEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/PlayerLeaveEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/PlayerChatEventListener.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/W.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/R.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/H.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/E.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Statics.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java" />
       </list>
     </option>
   </component>
@@ -209,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561798911468</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Utilities + Cleanup">
+      <created>1561802182751</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561802182752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -223,12 +270,13 @@
       <window_info id="Image Layers" order="4" />
       <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21887034" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Messages" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -236,7 +284,7 @@
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.3290653" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32862645" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -246,7 +294,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Workspace XML" />
     <MESSAGE value="Listeners folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listeners folder" />
+    <MESSAGE value="Utilities + Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Utilities + Cleanup" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/jdk.httpserver/com/sun/net/httpserver/HttpHandler.java">
@@ -309,13 +358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -417,16 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/H.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -444,23 +476,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/E.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Statics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        <state relative-caret-position="490">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="401">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
             <element signature="e#1138#1139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/S.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
