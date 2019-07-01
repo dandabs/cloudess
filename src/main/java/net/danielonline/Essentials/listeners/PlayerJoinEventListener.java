@@ -1,9 +1,14 @@
 package net.danielonline.Essentials.listeners;
 
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -25,6 +30,13 @@ public class PlayerJoinEventListener implements Listener {
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        ItemStack menuItem = new ItemStack(Material.COMMAND_BLOCK);
+        ItemMeta menuItemMeta = menuItem.getItemMeta();
+        menuItemMeta.setDisplayName(ChatColor.DARK_GREEN + (ChatColor.BOLD + "Menu Interface"));
+        menuItem.setItemMeta(menuItemMeta);
+        event.getPlayer().getInventory().setItem(8, new ItemStack(menuItem));
+
     }
 
     private void sendGet(Player player) throws Exception

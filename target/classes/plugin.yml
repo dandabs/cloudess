@@ -3,6 +3,7 @@ version: DEV
 main: net.danielonline.Essentials.Essentials
 load: STARTUP
 author: dandabs
+api-version: 1.13
 authors:
   - pyxxl.
 website: https://ccessentials.glitch.me
