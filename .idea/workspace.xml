@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryMoveItemEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerUseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/G.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/T.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/serverCore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/external/SQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDeathEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDropItemEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerRespawnEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,11 +30,123 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1274#1275#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="205">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="115" column="77" lean-forward="true" selection-start-line="111" selection-end-line="115" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1331#3091#0" expanded="true" />
+                <element signature="e#3090#3091#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerUseListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="24" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDropItemEventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDeathEventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerRespawnEventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="73" lean-forward="true" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/external/SQL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,13 +196,20 @@
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/GUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/G.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerUseListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryMoveItemEventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/serverCore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/external/SQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDropItemEventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDeathEventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerRespawnEventListener.java" />
       </list>
     </option>
   </component>
@@ -171,7 +290,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Essentials" type="462c0819:PsiDirectoryNode" />
-              <item name="listeners" type="462c0819:PsiDirectoryNode" />
+              <item name="external" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ccessentials" type="b2602c69:ProjectViewProjectNode" />
@@ -180,7 +299,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Essentials" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="listeners" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ccessentials" type="b2602c69:ProjectViewProjectNode" />
@@ -258,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561802979298</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Basic Menu GUI">
+      <created>1562011484442</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562011484443</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -298,7 +424,8 @@
     <MESSAGE value="Listeners folder" />
     <MESSAGE value="Utilities + Cleanup" />
     <MESSAGE value="Vault integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vault integration" />
+    <MESSAGE value="Basic Menu GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic Menu GUI" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -365,16 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerChatEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -536,32 +653,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/C.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="105">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerUseListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/serverCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerChatEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="61">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#1280#1281#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -576,27 +687,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/C.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="-117">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+        <state relative-caret-position="555">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1280#1281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/external/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        <state relative-caret-position="145">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -605,8 +738,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="205">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerUseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDropItemEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDeathEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="115" column="77" lean-forward="true" selection-start-line="111" selection-end-line="115" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1331#3091#0" expanded="true" />
+            <element signature="e#3090#3091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerRespawnEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="73" lean-forward="true" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

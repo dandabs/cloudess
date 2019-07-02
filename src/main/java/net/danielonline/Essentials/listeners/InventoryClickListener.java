@@ -1,5 +1,6 @@
 package net.danielonline.Essentials.listeners;
 
+import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import net.danielonline.Essentials.handlers.menuInterface;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -11,7 +12,13 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
+import java.sql.Connection;
+
 public class InventoryClickListener implements Listener {
+
+    private Connection connection;
+    private String host, database, username, password;
+    private int port;
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
@@ -22,6 +29,12 @@ public class InventoryClickListener implements Listener {
 
             e.setCancelled(true);
             // p.sendMessage("You clicked at slot " + e.getRawSlot());
+
+            if (e.getRawSlot() == 13) {
+
+                new SignoutHandler().signOut(p); // signs the player out
+
+            }
 
         }
 

@@ -1,5 +1,6 @@
 package net.danielonline.Essentials;
 
+import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.listeners.*;
 import net.danielonline.Essentials.utils.*;
 import net.danielonline.Essentials.commands.*;
@@ -18,9 +19,11 @@ import java.util.logging.Logger;
 public class Essentials extends JavaPlugin {
 
     public Essentials() {}
+    private static Essentials instance;
 
     @Override
     public void onEnable() {
+        instance = this;
         S.enable();
         register();
 
@@ -33,11 +36,17 @@ public class Essentials extends JavaPlugin {
         setupPermissions();
         setupChat();
 
+        new SQL().enable();
+
     }
 
     @Override
     public void onDisable() {
         S.disable();
+    }
+
+    public static Essentials getInstance() {
+        return instance;
     }
 
 
@@ -50,6 +59,9 @@ public class Essentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerUseListener(), this);
         getServer().getPluginManager().registerEvents(new InventoryMoveItemEventListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerRespawnEventListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDropItemEventListener(), this);
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
         this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
