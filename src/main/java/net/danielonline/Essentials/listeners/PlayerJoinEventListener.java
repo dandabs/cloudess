@@ -2,6 +2,7 @@ package net.danielonline.Essentials.listeners;
 
 import com.sun.tools.javac.util.Convert;
 import net.danielonline.Essentials.Essentials;
+import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.utils.BukkitSerialization;
 import org.bukkit.Bukkit;
@@ -41,6 +42,13 @@ public class PlayerJoinEventListener implements Listener {
 
     private int verification;
 
+    private String o_username;
+    private String o_banned;
+    private String o_x;
+    private String o_y;
+    private String o_z;
+    private Inventory o_inventory;
+
     BukkitRunnable r1 = new BukkitRunnable() {
         @Override
         public void run() {
@@ -63,7 +71,13 @@ public class PlayerJoinEventListener implements Listener {
                 while (result.next()) {
 
                     String username = result.getString("USERNAME");
-                     verification = 1;
+                    o_username = result.getString("USERNAME");
+                    o_banned = result.getString("BANNED");
+                    o_x = result.getString("LASTLOGOUT_X");
+                    o_y = result.getString("LASTLOGOUT_Y");
+                    o_z = result.getString("LASTLOGOUT_Z");
+                    //o_inventory = BukkitSerialization.fromBase64(result.getString("INVENTORY"));
+                    verification = 1;
 
                 }
 
@@ -72,12 +86,20 @@ public class PlayerJoinEventListener implements Listener {
                     try {
                         openConnection();
                         Statement statement2 = connection.createStatement();
-                        statement2.executeUpdate("INSERT INTO corePlayers (USERNAME, BANNED, LASTLOGOUT_X, LASTLOGOUT_Y, LASTLOGOUT_Z, INVENTORY) VALUES ('" + username + "', '" + "false" + "', '" + (int) lastlogout_X + "', '" + (int) lastlogout_Y + "', '" + (int) lastlogout_Z + "', '" + inventory + "');");
+                        statement2.executeUpdate("INSERT INTO corePlayers (USERNAME, BANNED, LASTLOGOUT_X, LASTLOGOUT_Y, LASTLOGOUT_Z) VALUES ('" + username + "', '" + "false" + "', '" + (int) lastlogout_X + "', '" + (int) lastlogout_Y + "', '" + (int) lastlogout_Z + "');");
+                        o_username = username;
+                        o_banned = "false";
+                        o_x = Double.toString(lastlogout_X);
+                        o_y = Double.toString(lastlogout_Y);
+                        o_z = Double.toString(lastlogout_Z);
+                        //o_inventory = BukkitSerialization.fromBase64(inventory);
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                     } catch (SQLException e) {
                         e.printStackTrace();
-                    }
+                    } //catch (IOException e) {
+                      //  e.printStackTrace();
+                    //}
 
                 }
 
@@ -85,6 +107,8 @@ public class PlayerJoinEventListener implements Listener {
                 e.printStackTrace();
             } catch (SQLException e) {
                 e.printStackTrace();
+           // } catch (IOException e) {
+               // e.printStackTrace();
             }
 
             Bukkit.getScheduler().cancelTask(r1.getTaskId());
@@ -119,7 +143,7 @@ public class PlayerJoinEventListener implements Listener {
         lastlogout_X = player.getLocation().getX();
         lastlogout_Y = player.getLocation().getY();
         lastlogout_Z = player.getLocation().getZ();
-        inventory = new BukkitSerialization().toBase64(player.getInventory());
+        //inventory = new BukkitSerialization().toBase64(player.getInventory());
 
         try {
             Bukkit.getScheduler().cancelTask(r1.getTaskId());
@@ -128,6 +152,8 @@ public class PlayerJoinEventListener implements Listener {
         try {
             Bukkit.getScheduler().cancelTask(r1.getTaskId());
         } catch (IllegalStateException e) {}
+
+        new SignoutHandler().attemptSignIn(player, o_username, o_banned, o_x, o_y, o_z, o_inventory);
 
     }
 

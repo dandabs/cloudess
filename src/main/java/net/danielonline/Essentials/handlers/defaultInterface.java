@@ -11,12 +11,12 @@ import org.bukkit.inventory.InventoryHolder;
 
 import java.util.Arrays;
 
-public class menuInterface implements InventoryHolder, Listener {
+public class defaultInterface implements InventoryHolder, Listener {
 
     private final Inventory inv;
 
-    public menuInterface() {
-        inv = Bukkit.createInventory(this, 18, ChatColor.DARK_GRAY + (ChatColor.BOLD + "Menu Interface"));
+    public defaultInterface() {
+        inv = Bukkit.createInventory(this, 9, ChatColor.DARK_GRAY + (ChatColor.BOLD + "«Welcome»"));
         initializeItems();
     }
 
@@ -27,8 +27,8 @@ public class menuInterface implements InventoryHolder, Listener {
 
     // You can call this whenever you want to put the items in
     public void initializeItems() {
-        inv.addItem(new G().createGuiItem(Material.DIAMOND_SWORD, "Example Sword", Arrays.asList("This is an example!", "With description")));
-        inv.addItem(new G().createGuiItem(Material.IRON_HELMET, "§bExample Helmet", Arrays.asList("§aThis is an colored example!", "§fWith description")));
+        inv.addItem(new G().createGuiItem(Material.LIME_STAINED_GLASS_PANE, "§aSign in", Arrays.asList("§d§oCloudCraft CORE™")));
+        inv.addItem(new G().createGuiItem(Material.RED_STAINED_GLASS_PANE, "§4Sign out", Arrays.asList("§d§oCloudCraft CORE™")));
     }
 
     // You can open the inventory with this

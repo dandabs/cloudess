@@ -12,6 +12,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
+import java.io.IOException;
 import java.sql.Connection;
 
 public class InventoryClickListener implements Listener {
@@ -32,7 +33,33 @@ public class InventoryClickListener implements Listener {
 
             if (e.getRawSlot() == 13) {
 
-                new SignoutHandler().signOut(p); // signs the player out
+                try {
+                    new SignoutHandler().signOut(p); // signs the player out
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+
+        }
+
+        if (e.getClickedInventory().getSize() == 9) { // if the inventory is defaultInterface
+
+            e.setCancelled(true);
+            // p.sendMessage("You clicked at slot " + e.getRawSlot());
+
+            if (e.getRawSlot() == 1) {
+
+                try {
+                    new SignoutHandler().signOut(p); // signs the player out
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+            if (e.getRawSlot() == 0) {
+
+                new SignoutHandler().signIn(p); // signs the player in
 
             }
 

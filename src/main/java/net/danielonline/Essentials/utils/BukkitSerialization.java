@@ -1,10 +1,19 @@
 package net.danielonline.Essentials.utils;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
 
+import net.danielonline.Essentials.Essentials;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.io.BukkitObjectInputStream;
@@ -12,41 +21,24 @@ import org.bukkit.util.io.BukkitObjectOutputStream;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 public class BukkitSerialization {
-    public static String toBase64(Inventory inventory) {
-        try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            BukkitObjectOutputStream dataOutput = new BukkitObjectOutputStream(outputStream);
 
-            // Write the size of the inventory
-            dataOutput.writeInt(inventory.getSize());
 
-            // Save every element in the list
-            for (int i = 0; i < inventory.getSize(); i++) {
-                dataOutput.writeObject(inventory.getItem(i));
-            }
-
-            // Serialize that array
-            dataOutput.close();
-            return Base64Coder.encodeLines(outputStream.toByteArray());
-        } catch (Exception e) {
-            throw new IllegalStateException("Unable to save item stacks.", e);
-        }
+    public void saveInventory(Player p) throws IOException {
+        File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), p.getName() + ".yml");
+        FileConfiguration c = YamlConfiguration.loadConfiguration(f);
+        c.set("inventory.armor", p.getInventory().getArmorContents());
+        c.set("inventory.content", p.getInventory().getContents());
+        c.save(f);
     }
 
-    public static Inventory fromBase64(String data) throws IOException {
-        try {
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(data));
-            BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
-            Inventory inventory = Bukkit.getServer().createInventory(null, dataInput.readInt());
-
-            // Read the serialized inventory
-            for (int i = 0; i < inventory.getSize(); i++) {
-                inventory.setItem(i, (ItemStack) dataInput.readObject());
-            }
-            dataInput.close();
-            return inventory;
-        } catch (ClassNotFoundException e) {
-            throw new IOException("Unable to decode class type.", e);
-        }
+    @SuppressWarnings("unchecked")
+    public void restoreInventory(Player p) throws IOException {
+        File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), p.getName() + ".yml");
+        FileConfiguration c = YamlConfiguration.loadConfiguration(f);
+        ItemStack[] content = ((List<ItemStack>) c.get("inventory.armor")).toArray(new ItemStack[0]);
+        p.getInventory().setArmorContents(content);
+        content = ((List<ItemStack>) c.get("inventory.content")).toArray(new ItemStack[0]);
+        p.getInventory().setContents(content);
     }
+
 }
