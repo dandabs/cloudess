@@ -3,6 +3,7 @@ package net.danielonline.Essentials.cloudcraft_core_services;
 import net.danielonline.Essentials.Essentials;
 import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.handlers.defaultInterface;
+import net.danielonline.Essentials.listeners.InventoryClickListener;
 import net.danielonline.Essentials.utils.BukkitSerialization;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -109,6 +110,7 @@ public class SignoutHandler {
                 public void run(){
 
                     // ask player what they want to do (eg. log on, log off)
+                    InventoryClickListener.temp = 0;
                     new defaultInterface().openInventory(player);
 
                 }

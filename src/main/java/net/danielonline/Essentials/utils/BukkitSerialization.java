@@ -24,7 +24,7 @@ public class BukkitSerialization {
 
 
     public void saveInventory(Player p) throws IOException {
-        File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), p.getName() + ".yml");
+        File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), "players/inventories/" + p.getName() + ".yml");
         FileConfiguration c = YamlConfiguration.loadConfiguration(f);
         c.set("inventory.armor", p.getInventory().getArmorContents());
         c.set("inventory.content", p.getInventory().getContents());
@@ -33,7 +33,7 @@ public class BukkitSerialization {
 
     @SuppressWarnings("unchecked")
     public void restoreInventory(Player p) throws IOException {
-        File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), p.getName() + ".yml");
+        File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), "players/inventories/" + p.getName() + ".yml");
         FileConfiguration c = YamlConfiguration.loadConfiguration(f);
         ItemStack[] content = ((List<ItemStack>) c.get("inventory.armor")).toArray(new ItemStack[0]);
         p.getInventory().setArmorContents(content);

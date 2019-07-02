@@ -51,20 +51,25 @@ public class Essentials extends JavaPlugin {
 
 
     public void register() {
+
         getServer().getPluginManager().registerEvents(new PlayerChatEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerLeaveEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerBedEnterEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerBedLeaveEventListener(), this);
-        getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerUseListener(), this);
-        getServer().getPluginManager().registerEvents(new InventoryMoveItemEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerRespawnEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerDropItemEventListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerUseListener(), this);
+
+        getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
+        getServer().getPluginManager().registerEvents(new InventoryMoveItemEventListener(), this);
+        getServer().getPluginManager().registerEvents(new InventoryCloseEventListener(), this);
+
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
         this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
+
     }
 
     private boolean setupEconomy() {

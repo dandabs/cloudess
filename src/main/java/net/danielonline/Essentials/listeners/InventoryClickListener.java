@@ -21,6 +21,8 @@ public class InventoryClickListener implements Listener {
     private String host, database, username, password;
     private int port;
 
+    public static int temp = 0;
+
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
 
@@ -50,6 +52,8 @@ public class InventoryClickListener implements Listener {
 
             if (e.getRawSlot() == 1) {
 
+                temp = 1;
+
                 try {
                     new SignoutHandler().signOut(p); // signs the player out
                 } catch (IOException ex) {
@@ -58,6 +62,8 @@ public class InventoryClickListener implements Listener {
 
             }
             if (e.getRawSlot() == 0) {
+
+                temp = 1;
 
                 new SignoutHandler().signIn(p); // signs the player in
 

@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/defaultInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryCloseEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/Essentials.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="53" column="258" selection-start-line="53" selection-start-column="258" selection-end-line="53" selection-end-column="258" />
+            <state relative-caret-position="1680">
+              <caret line="112" column="52" lean-forward="true" selection-start-line="112" selection-start-column="52" selection-end-line="112" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#901#916#0" expanded="true" />
@@ -36,45 +38,6 @@
                 <element signature="e#1217#1235#0" expanded="true" />
                 <element signature="e#3937#4190#0" expanded="true" />
                 <element signature="e#4189#4190#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#968#998#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="88" column="133" selection-start-line="88" selection-start-column="133" selection-end-line="88" selection-end-column="133" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1575#4264#0" expanded="true" />
-                <element signature="e#4263#4264#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,13 +93,14 @@
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDropItemEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDeathEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerRespawnEventListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/defaultInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/handlers/menuInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerJoinEventListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryCloseEventListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java" />
       </list>
     </option>
   </component>
@@ -210,36 +174,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Essentials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccessentials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccessentials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Essentials" type="462c0819:PsiDirectoryNode" />
-              <item name="handlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccessentials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccessentials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Essentials" type="462c0819:PsiDirectoryNode" />
-              <item name="listeners" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccessentials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccessentials" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccessentials" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccessentials" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -319,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562066271412</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Saving + restoring inventory on join">
+      <created>1562082541052</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562082541052</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -330,15 +271,15 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21985815" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21985815" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32941177" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.17219251" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -346,7 +287,7 @@
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.32817537" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32817537" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24951644" />
@@ -360,7 +301,8 @@
     <MESSAGE value="Vault integration" />
     <MESSAGE value="Basic Menu GUI" />
     <MESSAGE value="Logon and logoff listeners" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logon and logoff listeners" />
+    <MESSAGE value="Saving + restoring inventory on join" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving + restoring inventory on join" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -659,18 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="63" column="87" selection-start-line="63" selection-start-column="87" selection-end-line="63" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerDropItemEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -714,10 +644,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/Essentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#968#998#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryClickListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="41" />
+        <state relative-caret-position="116">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -736,10 +694,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/InventoryCloseEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#743#1065#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="53" column="258" selection-start-line="53" selection-start-column="258" selection-end-line="53" selection-end-column="258" />
+        <state relative-caret-position="1680">
+          <caret line="112" column="52" lean-forward="true" selection-start-line="112" selection-start-column="52" selection-end-line="112" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#901#916#0" expanded="true" />
@@ -748,17 +718,6 @@
             <element signature="e#1217#1235#0" expanded="true" />
             <element signature="e#3937#4190#0" expanded="true" />
             <element signature="e#4189#4190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/BukkitSerialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#968#998#0" expanded="true" />
           </folding>
         </state>
       </provider>
