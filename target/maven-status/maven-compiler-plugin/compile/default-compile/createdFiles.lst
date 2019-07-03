@@ -1,12 +1,15 @@
 net/danielonline/Essentials/cloudcraft_core_services/serverCore.class
 net/danielonline/Essentials/listeners/PlayerBedLeaveEventListener.class
 net/danielonline/Essentials/listeners/PlayerDeathEventListener.class
+net/danielonline/Essentials/utils/Configuration.class
+net/danielonline/Essentials/commands/C_addspawn.class
 net/danielonline/Essentials/utils/E.class
 net/danielonline/Essentials/handlers/menuInterface.class
 net/danielonline/Essentials/listeners/PlayerChatEventListener.class
 net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler$1.class
 net/danielonline/Essentials/utils/S.class
 net/danielonline/Essentials/listeners/InventoryClickListener.class
+net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler$4.class
 net/danielonline/Essentials/listeners/PlayerDropItemEventListener.class
 net/danielonline/Essentials/utils/BukkitSerialization.class
 net/danielonline/Essentials/listeners/InventoryMoveItemEventListener.class
@@ -24,6 +27,7 @@ net/danielonline/Essentials/commands/C_info.class
 net/danielonline/Essentials/listeners/InventoryCloseEventListener.class
 net/danielonline/Essentials/utils/H.class
 net/danielonline/Essentials/handlers/defaultInterface.class
+net/danielonline/Essentials/utils/Anvils.class
 net/danielonline/Essentials/listeners/PlayerJoinEventListener.class
 net/danielonline/Essentials/listeners/PlayerRespawnEventListener.class
 net/danielonline/Essentials/external/SQL.class
@@ -33,6 +37,8 @@ net/danielonline/Essentials/utils/W.class
 net/danielonline/Essentials/utils/G.class
 net/danielonline/Essentials/utils/H$TestHandler2.class
 net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.class
+net/danielonline/Essentials/listeners/InventoryOpenEventListener.class
 net/danielonline/Essentials/utils/T.class
 net/danielonline/Essentials/utils/H$TestHandler.class
+net/danielonline/Essentials/commands/C_clear.class
 net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler$3.class

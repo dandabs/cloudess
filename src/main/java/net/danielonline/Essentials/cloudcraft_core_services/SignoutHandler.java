@@ -4,15 +4,21 @@ import net.danielonline.Essentials.Essentials;
 import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.handlers.defaultInterface;
 import net.danielonline.Essentials.listeners.InventoryClickListener;
+import net.danielonline.Essentials.utils.Anvils;
 import net.danielonline.Essentials.utils.BukkitSerialization;
+import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import javax.net.ssl.ExtendedSSLSession;
+import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -36,6 +42,8 @@ public class SignoutHandler {
     public static HashMap<Player,String> tempPlayersY = new HashMap<Player,String>();
     public static HashMap<Player,String> tempPlayersZ = new HashMap<Player,String>();
     public static HashMap<Player,Inventory> tempPlayersInventory = new HashMap<Player,Inventory>();
+
+    public Inventory AnvilInput;
 
     BukkitRunnable r1 = new BukkitRunnable() {
         @Override
@@ -66,8 +74,6 @@ public class SignoutHandler {
 
         if (new serverCore().init(357461)) {
 
-            // warn user to empty all important items from their inventory
-
             username = "" + player.getUniqueId();
             banned = false;
             lastlogout_X = player.getLocation().getX();
@@ -91,7 +97,7 @@ public class SignoutHandler {
 
     }
 
-    public void attemptSignIn(final Player player, String username, String banned, String lastlogout_X, String lastlogout_Y, String lastlogout_Z, Inventory inventory) {
+    public void attemptSignIn(final Player player, String username, String banned, final String lastlogout_X, final String lastlogout_Y, final String lastlogout_Z, final Inventory inventory) {
 
         // check if player is banned
         if (Boolean.valueOf(banned)) {
@@ -100,21 +106,51 @@ public class SignoutHandler {
 
         } else {
 
-            tempPlayersX.put(player, lastlogout_X);
-            tempPlayersY.put(player, lastlogout_Y);
-            tempPlayersZ.put(player, lastlogout_Z);
-            tempPlayersInventory.put(player, inventory);
+            File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), "players/inventories/" + player.getName() + ".yml");
 
-            Bukkit.getScheduler().runTaskLater(Essentials.getInstance(), new Runnable(){
-                @Override
-                public void run(){
+            if (f.isFile()) {
 
-                    // ask player what they want to do (eg. log on, log off)
-                    InventoryClickListener.temp = 0;
-                    new defaultInterface().openInventory(player);
+                tempPlayersX.put(player, lastlogout_X);
+                tempPlayersY.put(player, lastlogout_Y);
+                tempPlayersZ.put(player, lastlogout_Z);
+                tempPlayersInventory.put(player, inventory);
 
-                }
-            }, 20L);
+                Bukkit.getScheduler().runTaskLater(Essentials.getInstance(), new Runnable() {
+                    @Override
+                    public void run() {
+
+                        // ask player what they want to do (eg. log on, log off)
+                        InventoryClickListener.temp = 0;
+                        new defaultInterface().openInventory(player);
+
+                    }
+                }, 20L);
+
+            } else {
+
+                // new player is joining
+
+                player.sendTitle("§4Welcome to", "§bCloud§fCraft §5Online", 5, 10, 5);
+                player.sendTitle("§6Remember to log out using the menu", "", 5, 10, 5);
+                player.sendTitle("§6Tutorial now loading...", "", 5, 10, 5);
+
+                tempPlayersX.put(player, lastlogout_X);
+                tempPlayersY.put(player, lastlogout_Y);
+                tempPlayersZ.put(player, lastlogout_Z);
+                tempPlayersInventory.put(player, inventory);
+
+                Bukkit.getScheduler().runTaskLater(Essentials.getInstance(), new Runnable() {
+                    @Override
+                    public void run() {
+
+                        // ask player what they want to do (eg. log on, log off)
+                        InventoryClickListener.temp = 0;
+                        new defaultInterface().openInventory(player);
+
+                    }
+                }, 20L);
+
+            }
 
         }
 

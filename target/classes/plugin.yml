@@ -3,6 +3,7 @@ version: DEV
 main: net.danielonline.Essentials.Essentials
 load: STARTUP
 author: dandabs
+depend: [ProtocolLib, Vault]
 api-version: 1.13
 authors:
   - pyxxl.
@@ -19,5 +20,11 @@ commands:
       - cloudess
       - cc
       - about
-    permission: cc.player.info
+  clear:
+    description: Clear your inventory
+    aliases:
+      - clearinv
+      - ci
+      - clearinventory
+    permission: cc.player.clear
 

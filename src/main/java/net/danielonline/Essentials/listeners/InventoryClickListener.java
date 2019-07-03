@@ -2,7 +2,7 @@ package net.danielonline.Essentials.listeners;
 
 import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import net.danielonline.Essentials.handlers.menuInterface;
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -45,9 +45,11 @@ public class InventoryClickListener implements Listener {
 
         }
 
-        if (e.getClickedInventory().getSize() == 9) { // if the inventory is defaultInterface
+        //if (e.getClickedInventory().getSize() == 9) { // if the inventory is defaultInterface
+        if (e.getInventory().getTitle().equals(net.md_5.bungee.api.ChatColor.DARK_GRAY + (ChatColor.BOLD + "«Welcome»"))) {
 
             e.setCancelled(true);
+
             // p.sendMessage("You clicked at slot " + e.getRawSlot());
 
             if (e.getRawSlot() == 1) {
@@ -74,9 +76,9 @@ public class InventoryClickListener implements Listener {
         if (e.getClickedInventory().getType().equals(InventoryType.PLAYER))
         {
 
-            if(e.getCurrentItem().getType().equals(Material.AIR)) {
+            /*if(e.getCurrentItem().getType().equals(Material.AIR)) {
                 e.setCancelled(true); // don't let a player move the item
-            }
+            }*/
 
             if(e.getCurrentItem().getType().equals(Material.COMMAND_BLOCK)) {
                 e.setCancelled(true); // don't let a player move the item
@@ -84,9 +86,6 @@ public class InventoryClickListener implements Listener {
 
         }
 
-        if (e.getClick().equals(ClickType.NUMBER_KEY)){
-            e.setCancelled(true);
-        }
 
         //e.setCancelled(true);
 
