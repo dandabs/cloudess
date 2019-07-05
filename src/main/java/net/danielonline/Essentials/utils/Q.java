@@ -45,6 +45,7 @@ public class Q {
         quotes.add("\"The journey of a thousand miles begins with one step.\" - Lao Tzu");
         quotes.add("\"I'll be with you... even if you can't see me.\" - Little Foot's Mother in Land Before Tim");
         quotes.add("\"You were worth it, old friend, and a thousand times over.\" - Where the red fern grows.");
+        quotes.add("\"GET IN THE FUCKING CAR, MORTY!\" - Rick in Bushworld Adventures");
         // shuffle the list
         Collections.shuffle(quotes);
         //System.out.println("Collection after shuffle: "+ quotes);
