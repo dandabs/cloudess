@@ -24,7 +24,7 @@ public class Configuration {
         saveConfig();
 
         config.addDefault("locations.default", "world/0.200.0.0.0");
-        config.set("locations.spawns", Arrays.asList(locationsSpawns));
+        config.addDefault("locations.spawns", Arrays.asList(locationsSpawns));
 
         config.options().copyDefaults(true);
         saveConfig();

@@ -24,6 +24,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class SignoutHandler {
 
@@ -97,6 +98,17 @@ public class SignoutHandler {
 
     }
 
+    private static int getRandomNumberInRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+
     public void attemptSignIn(final Player player, String username, String banned, final String lastlogout_X, final String lastlogout_Y, final String lastlogout_Z, final Inventory inventory) {
 
         // check if player is banned
@@ -105,6 +117,18 @@ public class SignoutHandler {
             player.kickPlayer("You are dead.");
 
         } else {
+
+            Random rand = new Random();
+
+            List spawns = Essentials.getInstance().getConfig().getList("locations.spawns");
+
+            ArrayList<String> array = new ArrayList<>(spawns);
+
+            String[] loc = spawns.get(rand.nextInt(array.size())).toString().split("/");
+            String[] coords = loc[1].split(".");
+            Location l = new Location(Bukkit.getServer().getWorld("world"), Double.parseDouble("357.514"), Double.parseDouble("75.000"), Double.parseDouble("213.700"), Float.parseFloat("-179.8"), Float.parseFloat("0.4"));
+
+            player.teleport(l);
 
             File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), "players/inventories/" + player.getName() + ".yml");
 

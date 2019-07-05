@@ -26,6 +26,8 @@ public class C_addspawn implements CommandExecutor {
 
         config.set("location.spawns", config.getStringList("location.spawns").add(st));
 
+        Essentials.getInstance().saveConfig();
+
         return true;
     }
 
