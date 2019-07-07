@@ -19,7 +19,7 @@ public class W {
         con.setRequestMethod("GET");
 
 
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
         int responseCode = con.getResponseCode();
 
@@ -48,7 +48,7 @@ public class W {
         con.setRequestMethod("GET");
 
 
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
         int responseCode = con.getResponseCode();
 

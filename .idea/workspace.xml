@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/commands/C_help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/commands/C_help.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +80,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560079682205</updated>
+      <workItem from="1562353608138" duration="1480000" />
+      <workItem from="1562404833919" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="Workspace XML">
       <created>1561797580191</created>
@@ -139,15 +139,27 @@
       <option name="project" value="LOCAL" />
       <updated>1562088266475</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="&quot;GET IN THE FUCKING CAR, MORTY!&quot; - Rick">
+      <created>1562353884312</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562353884312</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -162,7 +174,8 @@
     <MESSAGE value="Logon and logoff listeners" />
     <MESSAGE value="Saving + restoring inventory on join" />
     <MESSAGE value="Login menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login menu" />
+    <MESSAGE value="&quot;GET IN THE FUCKING CAR, MORTY!&quot; - Rick" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;GET IN THE FUCKING CAR, MORTY!&quot; - Rick" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
