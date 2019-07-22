@@ -134,7 +134,7 @@ public class SignoutHandler {
 
             String[] loc = spawns.get(rand.nextInt(array.size())).toString().split("/");
             String[] coords = loc[1].split(".");
-            Location l = new Location(Bukkit.getServer().getWorld("world"), Double.parseDouble("357.514"), Double.parseDouble("75.000"), Double.parseDouble("213.700"), Float.parseFloat("-179.8"), Float.parseFloat("0.4"));
+            Location l = new Location(Bukkit.getServer().getWorld("world"), Double.parseDouble("394.5"), Double.parseDouble("112.5"), Double.parseDouble("1562"), Float.parseFloat("93.355"), Float.parseFloat("6.338"));
 
             player.teleport(l);
 

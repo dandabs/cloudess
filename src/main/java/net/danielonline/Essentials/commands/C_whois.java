@@ -15,6 +15,10 @@ public class C_whois implements CommandExecutor {
             //User user;
             sender.sendMessage(C.Gray + "Username: " + C.Aqua + sender.getName());
             //sender.sendMessage(C.DGray + "* " + C.Gray + "UUID: " + C.DAqua + sender.);
-        }
+
+         }
+
+        return true;
+
     }
 }

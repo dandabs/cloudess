@@ -55,11 +55,11 @@ public class PlayerJoinEventListener implements Listener {
 
             //This is where you should do your database interaction
 
-            host = "eu-sql.pebblehost.com";
+            host = "116.203.95.196";
             port = 3306;
-            database = "customer_74746";
-            susername = "customer_74746";
-            password = "5f84734369";
+            database = "dockerconnect";
+            susername = "dockerconnect";
+            password = "chiicken";
 
             verification = 0;
 
