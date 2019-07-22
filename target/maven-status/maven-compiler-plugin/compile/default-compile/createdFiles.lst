@@ -14,6 +14,7 @@ net/danielonline/Essentials/utils/Anvils.class
 net/danielonline/Essentials/listeners/PlayerJoinEventListener.class
 net/danielonline/Essentials/listeners/PlayerRespawnEventListener.class
 net/danielonline/Essentials/utils/H$TestHandler2.class
+net/danielonline/Essentials/commands/C_reload.class
 net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.class
 net/danielonline/Essentials/listeners/InventoryOpenEventListener.class
 net/danielonline/Essentials/utils/H$TestHandler.class
@@ -43,6 +44,8 @@ net/danielonline/Essentials/external/SQL.class
 net/danielonline/Essentials/listeners/InventoryCloseEventListener$1.class
 net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler$2.class
 net/danielonline/Essentials/utils/W.class
+net/danielonline/Essentials/listeners/CreatureSpawnEventListener.class
 net/danielonline/Essentials/utils/G.class
 net/danielonline/Essentials/utils/T.class
+net/danielonline/Essentials/utils/LocationSerialization.class
 net/danielonline/Essentials/utils/Q.class

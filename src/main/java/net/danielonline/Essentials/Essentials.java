@@ -76,10 +76,13 @@ public class Essentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryMoveItemEventListener(), this);
         getServer().getPluginManager().registerEvents(new InventoryCloseEventListener(), this);
 
+        getServer().getPluginManager().registerEvents(new CreatureSpawnEventListener(), this);
+
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
         //this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
         this.getCommand("clear").setExecutor((CommandExecutor)new C_clear());
+        this.getCommand("ccreload").setExecutor((CommandExecutor)new C_reload());
 
     }
 

@@ -27,6 +27,7 @@ public class PlayerLeaveEventListener implements Listener {
         catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     /*@Override

@@ -30,3 +30,6 @@ commands:
   addspawn:
     description: Add a spawn to the list
     permission: cc.core.addspawn
+  ccreload:
+    description: Reload the CloudEss configuration
+    permission: cc.core.reload

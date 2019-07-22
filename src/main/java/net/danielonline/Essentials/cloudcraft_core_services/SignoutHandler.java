@@ -7,6 +7,7 @@ import net.danielonline.Essentials.listeners.InventoryClickListener;
 import net.danielonline.Essentials.utils.Anvils;
 import net.danielonline.Essentials.utils.BukkitSerialization;
 import net.danielonline.Essentials.utils.Configuration;
+import net.danielonline.Essentials.utils.LocationSerialization;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -16,6 +17,8 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import javax.net.ssl.ExtendedSSLSession;
@@ -78,7 +81,7 @@ public class SignoutHandler {
 
         if (new serverCore().init(357461)) {
 
-            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', new Essentials().getConfig().getString("quitMessage")).replace("%player%", player.getName()));
+            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Essentials.getInstance().getConfig().getString("lang.quit")).replace("%player%", player.getName()));
 
             username = "" + player.getUniqueId();
             banned = false;
@@ -116,6 +119,11 @@ public class SignoutHandler {
         return r.nextInt((max - min) + 1) + min;
     }
 
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> loc() {
+        return (ArrayList<String>) Essentials.getInstance().getConfig().getStringList("locations.joinchambers");
+    }
+
 
     public void attemptSignIn(final Player player, String username, String banned, final String lastlogout_X, final String lastlogout_Y, final String lastlogout_Z, final Inventory inventory) {
 
@@ -126,15 +134,22 @@ public class SignoutHandler {
 
         } else {
 
+            //Bukkit.broadcastMessage("loc is " + loc().get(0));
+
+            player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 0, 2));
+
             Random rand = new Random();
 
-            List spawns = Essentials.getInstance().getConfig().getList("locations.spawns");
+            List spawns = Essentials.getInstance().getConfig().getList("locations.joinchambers");
 
             ArrayList<String> array = new ArrayList<>(spawns);
 
-            String[] loc = spawns.get(rand.nextInt(array.size())).toString().split("/");
-            String[] coords = loc[1].split(".");
-            Location l = new Location(Bukkit.getServer().getWorld("world"), Double.parseDouble("394.5"), Double.parseDouble("112.5"), Double.parseDouble("1562"), Float.parseFloat("93.355"), Float.parseFloat("6.338"));
+            //String[] loc = spawns.get(rand.nextInt(array.size())).toString().split("/");
+            //String[] coords = loc[1].split(".");
+
+            Location l = new LocationSerialization().deserialize(loc().get(rand.nextInt(loc().size())));
+
+            //Location l = new Location(Bukkit.getServer().getWorld("world"), Double.parseDouble("-393.5"), Double.parseDouble("112"), Double.parseDouble("1562.5"), Float.parseFloat("93.355"), Float.parseFloat("6.338"));
 
             player.teleport(l);
 
@@ -251,7 +266,7 @@ public class SignoutHandler {
                     pp.sendTitle("Title", "Subtitle", 1, 4, 1);
                 }
 
-                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', new Essentials().getConfig().getString("joinMessage")).replace("%player%", player.getName()));
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Essentials.getInstance().getConfig().getString("lang.join")).replace("%player%", player.getName()));
 
             }
 

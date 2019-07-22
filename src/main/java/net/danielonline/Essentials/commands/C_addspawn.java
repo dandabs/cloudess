@@ -1,6 +1,7 @@
 package net.danielonline.Essentials.commands;
 
 import net.danielonline.Essentials.Essentials;
+import net.danielonline.Essentials.utils.LocationSerialization;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -22,9 +23,9 @@ public class C_addspawn implements CommandExecutor {
         Player p = (Player) sender;
         Location l = p.getLocation();
 
-        String st = l.getWorld().getName() + "/" + l.getX() + "." + l.getY() + "." + l.getZ() + "." + l.getPitch() + "." + l.getYaw();
+        //String st = l.getWorld().getName() + "/" + l.getX() + "." + l.getY() + "." + l.getZ() + "." + l.getPitch() + "." + l.getYaw();
 
-        config.set("location.spawns", config.getStringList("location.spawns").add(st));
+        config.set("location.joinchambers", config.getStringList("location.joinchambers").add(new LocationSerialization().serialize(p.getLocation())));
 
         Essentials.getInstance().saveConfig();
 
