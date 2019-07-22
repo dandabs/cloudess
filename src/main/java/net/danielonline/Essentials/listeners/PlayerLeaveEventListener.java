@@ -18,6 +18,7 @@ public class PlayerLeaveEventListener implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
+        event.setQuitMessage("");
         try {
             sendGet(event.getPlayer());
         }

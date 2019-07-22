@@ -27,8 +27,8 @@ public class menuInterface implements InventoryHolder, Listener {
 
     // You can call this whenever you want to put the items in
     public void initializeItems() {
-        inv.addItem(new G().createGuiItem(Material.DIAMOND_SWORD, "Example Sword", Arrays.asList("This is an example!", "With description")));
-        inv.addItem(new G().createGuiItem(Material.IRON_HELMET, "§bExample Helmet", Arrays.asList("§aThis is an colored example!", "§fWith description")));
+        //inv.addItem(new G().createGuiItem(Material, "Example Sword", Arrays.asList("This is an example!", "With description")));
+        inv.setItem(13, new G().createGuiItem(Material.BARRIER, "§4Log Out", Arrays.asList("§aoof", "§fbigger oof")));
     }
 
     // You can open the inventory with this

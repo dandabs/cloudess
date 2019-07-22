@@ -27,4 +27,6 @@ commands:
       - ci
       - clearinventory
     permission: cc.player.clear
-
+  addspawn:
+    description: Add a spawn to the list
+    permission: cc.core.addspawn

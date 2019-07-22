@@ -14,11 +14,11 @@ public class SQL {
 
     public void enable() {
 
-        host = "eu-sql.pebblehost.com";
+        host = "116.203.95.196";
         port = 3306;
-        database = "customer_74746";
-        username = "customer_74746";
-        password = "5f84734369";
+        database = "dockerconnect";
+        username = "dockerconnect";
+        password = "chiicken";
 
     }
 

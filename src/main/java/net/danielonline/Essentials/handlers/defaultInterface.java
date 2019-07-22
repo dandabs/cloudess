@@ -27,8 +27,8 @@ public class defaultInterface implements InventoryHolder, Listener {
 
     // You can call this whenever you want to put the items in
     public void initializeItems() {
-        inv.addItem(new G().createGuiItem(Material.LIME_STAINED_GLASS_PANE, "§aSign in", Arrays.asList("§d§oCloudCraft CORE™")));
-        inv.addItem(new G().createGuiItem(Material.RED_STAINED_GLASS_PANE, "§4Sign out", Arrays.asList("§d§oCloudCraft CORE™")));
+        inv.addItem(new G().createGuiItem(Material.LIME_STAINED_GLASS_PANE, "§aLink Start!", Arrays.asList("§d§oCloudCraft CORE™")));
+        inv.addItem(new G().createGuiItem(Material.RED_STAINED_GLASS_PANE, "§4*Remove NerveGear™*", Arrays.asList("§d§oCloudCraft CORE™")));
     }
 
     // You can open the inventory with this

@@ -23,7 +23,7 @@ public class Configuration {
         //Save the config whenever you manipulate it
         saveConfig();
 
-        config.addDefault("locations.default", "world/0.200.0.0.0");
+        config.addDefault("locations.tutorialspawn", "world/0.200.0.0.0");
         config.addDefault("locations.spawns", Arrays.asList(locationsSpawns));
 
         config.options().copyDefaults(true);

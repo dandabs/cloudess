@@ -120,6 +120,8 @@ public class PlayerJoinEventListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event)
     {
 
+        event.setJoinMessage("");
+
         try {
             Bukkit.getScheduler().cancelTask(r1.getTaskId());
         } catch (IllegalStateException e) {}

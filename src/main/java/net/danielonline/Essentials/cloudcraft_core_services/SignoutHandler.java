@@ -33,6 +33,8 @@ public class SignoutHandler {
     private double lastlogout_X;
     private double lastlogout_Y;
     private double lastlogout_Z;
+    private String lastlogout_yaw;
+    private String lastlogout_pitch;
     private String inventory;
 
     private Connection connection;
@@ -51,17 +53,17 @@ public class SignoutHandler {
         public void run() {
             //This is where you should do your database interaction
 
-            host = "eu-sql.pebblehost.com";
+            host = "116.203.95.196";
             port = 3306;
-            database = "customer_74746";
-            susername = "customer_74746";
-            password = "5f84734369";
+            database = "dockerconnect";
+            susername = "dockerconnect";
+            password = "chiicken";
 
             try {
                 openConnection();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate("DELETE FROM corePlayers WHERE USERNAME = '" + username + "';");
-                statement.executeUpdate("INSERT INTO corePlayers (USERNAME, BANNED, LASTLOGOUT_X, LASTLOGOUT_Y, LASTLOGOUT_Z) VALUES ('" + username + "', '" + banned + "', '" + (int) lastlogout_X + "', '" + (int) lastlogout_Y + "', '" +(int) lastlogout_Z + "');");
+                statement.executeUpdate("INSERT INTO corePlayers (USERNAME, BANNED, LASTLOGOUT_X, LASTLOGOUT_Y, LASTLOGOUT_Z, LASTLOGOUT_YAW, LASTLOGOUT_PITCH) VALUES ('" + username + "', '" + banned + "', '" + (int) lastlogout_X + "', '" + (int) lastlogout_Y + "', '" +(int) lastlogout_Z + "', '" + lastlogout_yaw + "', '" + lastlogout_pitch + "');");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
@@ -80,6 +82,8 @@ public class SignoutHandler {
             lastlogout_X = player.getLocation().getX();
             lastlogout_Y = player.getLocation().getY();
             lastlogout_Z = player.getLocation().getZ();
+            lastlogout_yaw = String.valueOf(player.getLocation().getYaw());
+            lastlogout_pitch = String.valueOf(player.getLocation().getPitch());
             //inventory = new BukkitSerialization().toBase64(player.getInventory());
 
             new BukkitSerialization().saveInventory(player);
@@ -87,6 +91,7 @@ public class SignoutHandler {
             r1.runTaskAsynchronously(Essentials.getInstance());
 
             // teleport user to a safeplace
+
 
             // Remove player from server.
             player.getInventory().clear();
@@ -183,6 +188,8 @@ public class SignoutHandler {
     private String x;
     private String y;
     private String z;
+    private String yaw;
+    private String pitch;
     private Inventory i;
 
     private Player pp;
@@ -201,11 +208,11 @@ public class SignoutHandler {
 
         //This is where you should do your database interaction
 
-        host = "eu-sql.pebblehost.com";
+        host = "116.203.95.196";
         port = 3306;
-        database = "customer_74746";
-        susername = "customer_74746";
-        password = "5f84734369";
+        database = "dockerconnect";
+        susername = "dockerconnect";
+        password = "chiicken";
 
         try {
             openConnection();
@@ -217,18 +224,32 @@ public class SignoutHandler {
                 x = result.getString("LASTLOGOUT_X");
                 y = result.getString("LASTLOGOUT_Y");
                 z = result.getString("LASTLOGOUT_Z");
+                yaw = result.getString("LASTLOGOUT_YAW");
+                pitch = result.getString("LASTLOGOUT_PITCH");
                 //i = BukkitSerialization.fromBase64(result.getString("INVENTORY"));
 
-                Location loc = new Location(pp.getWorld(), Double.valueOf(x),  Double.valueOf(y),  Double.valueOf(z));
-                Inventory inv = i;
+                if (x == "") {
 
-                pp.teleport(loc);
-                new BukkitSerialization().restoreInventory(player);
-                //pp.getInventory().setContents(inv.getContents());
-                //pp.updateInventory();
-                pp.sendTitle("Title", "Subtitle", 1, 4, 1);
+                    Location loc = new Location(pp.getWorld(), Double.valueOf("338"), Double.valueOf("64"), Double.valueOf("419"), Float.valueOf("180.209"), Float.valueOf("6.753"));
+                    //Inventory inv = i;
+                    pp.teleport(loc);
+                    //new BukkitSerialization().restoreInventory(player);
+                    pp.sendTitle("Title", "Subtitle", 1, 4, 1);
+
+                } else {
+
+                    Location loc = new Location(pp.getWorld(), Double.valueOf(x), Double.valueOf(y), Double.valueOf(z), Float.valueOf(yaw), Float.valueOf(pitch));
+                    Inventory inv = i;
+
+                    pp.teleport(loc);
+                    new BukkitSerialization().restoreInventory(player);
+                    //pp.getInventory().setContents(inv.getContents());
+                    //pp.updateInventory();
+                    pp.sendTitle("Title", "Subtitle", 1, 4, 1);
+                }
 
             }
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
