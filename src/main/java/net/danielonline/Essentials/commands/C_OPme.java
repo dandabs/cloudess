@@ -10,10 +10,10 @@ public class C_OPme implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (!sender.hasPermission("cc.player.opme")) {
             sender.sendMessage(C.Prefix + C.Red + "No permission");
-            return false;
+            return true;
         } else if (!sender.hasPermission("cc.player.opne.bypass")) {
             sender.sendMessage(C.Prefix + C.Red + "But you already ARE op..." + C.DGray + C.Italics + "(if you weren't, you would be kicked by now)");
-            return false;
+            return true;
         } else {
             // opme time
             Player p = (Player) sender;

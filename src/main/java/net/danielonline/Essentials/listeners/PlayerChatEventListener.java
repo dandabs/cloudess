@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class PlayerChatEventListener implements Listener {
 
-    private final String USER_AGENT = "Mozilla/5.0";
+    private final String USER_AGENT = "Mozilla/6.9";
 
     public PlayerChatEventListener() {}
 
@@ -44,7 +44,7 @@ public class PlayerChatEventListener implements Listener {
         con.setRequestMethod("GET");
 
 
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
         int responseCode = con.getResponseCode();
 

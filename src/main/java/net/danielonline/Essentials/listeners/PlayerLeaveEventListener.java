@@ -10,9 +10,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+//import litebans.api.*;
+
 public class PlayerLeaveEventListener implements Listener {
 
-    private final String USER_AGENT = "Mozilla/5.0";
+    private final String USER_AGENT = "Mozilla/6.9";
 
     public PlayerLeaveEventListener() {}
 
@@ -27,6 +29,11 @@ public class PlayerLeaveEventListener implements Listener {
         }
     }
 
+    /*@Override
+    public void entryAdded(Entry entry) {
+
+    }*/
+
     private void sendGet(Player player) throws Exception
     {
         String url = "https://ccessentials.glitch.me/api/quit/" + player.getName();
@@ -38,7 +45,7 @@ public class PlayerLeaveEventListener implements Listener {
         con.setRequestMethod("GET");
 
 
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
         int responseCode = con.getResponseCode();
 

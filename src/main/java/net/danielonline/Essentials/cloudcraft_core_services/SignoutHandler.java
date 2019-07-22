@@ -6,6 +6,7 @@ import net.danielonline.Essentials.handlers.defaultInterface;
 import net.danielonline.Essentials.listeners.InventoryClickListener;
 import net.danielonline.Essentials.utils.Anvils;
 import net.danielonline.Essentials.utils.BukkitSerialization;
+import net.danielonline.Essentials.utils.Configuration;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -76,6 +77,8 @@ public class SignoutHandler {
     public void signOut(Player player) throws IOException {
 
         if (new serverCore().init(357461)) {
+
+            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', new Essentials().getConfig().getString("quitMessage")).replace("%player%", player.getName()));
 
             username = "" + player.getUniqueId();
             banned = false;
@@ -247,6 +250,8 @@ public class SignoutHandler {
                     //pp.updateInventory();
                     pp.sendTitle("Title", "Subtitle", 1, 4, 1);
                 }
+
+                Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', new Essentials().getConfig().getString("joinMessage")).replace("%player%", player.getName()));
 
             }
 

@@ -24,7 +24,9 @@ public class Configuration {
         saveConfig();
 
         config.addDefault("locations.tutorialspawn", "world/0.200.0.0.0");
-        config.addDefault("locations.spawns", Arrays.asList(locationsSpawns));
+        config.addDefault("locations.joinchambers", Arrays.asList(locationsSpawns));
+        config.addDefault("joinMessage", "&6{&c+&6} &6%player%");
+        config.addDefault("quitMessage", "&6{&c-&6} &6%player%");
 
         config.options().copyDefaults(true);
         saveConfig();

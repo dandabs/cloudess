@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class PlayerBedEnterEventListener implements Listener {
 
-    private final String USER_AGENT = "Mozilla/5.0";
+    private final String USER_AGENT = "Mozilla/6.9";
 
     public PlayerBedEnterEventListener() {}
 
@@ -37,7 +37,7 @@ public class PlayerBedEnterEventListener implements Listener {
         con.setRequestMethod("GET");
 
 
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
 
 
