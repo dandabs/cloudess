@@ -79,6 +79,12 @@ public class SignoutHandler {
 
     public void signOut(Player player) throws IOException {
 
+        if (!player.getWorld().getName().equals("world")) {
+
+            player.teleport(new LocationSerialization().deserialize(Essentials.getInstance().getConfig().getString("locations.spawn")));
+
+        }
+
         if (new serverCore().init(357461)) {
 
             Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Essentials.getInstance().getConfig().getString("lang.quit")).replace("%player%", player.getName()));
@@ -136,7 +142,7 @@ public class SignoutHandler {
 
             //Bukkit.broadcastMessage("loc is " + loc().get(0));
 
-            player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 0, 2));
+            //player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 0, 2));
 
             Random rand = new Random();
 
@@ -248,7 +254,7 @@ public class SignoutHandler {
 
                 if (x == "") {
 
-                    Location loc = new Location(pp.getWorld(), Double.valueOf("338"), Double.valueOf("64"), Double.valueOf("419"), Float.valueOf("180.209"), Float.valueOf("6.753"));
+                    Location loc = new Location(pp.getWorld(), Double.valueOf("-396.5"), Double.valueOf("125"), Double.valueOf("1541.5"), Float.valueOf("180.0"), Float.valueOf("15.2"));
                     //Inventory inv = i;
                     pp.teleport(loc);
                     //new BukkitSerialization().restoreInventory(player);
@@ -256,6 +262,9 @@ public class SignoutHandler {
 
                 } else {
 
+                    Location loc2 = new Location(pp.getWorld(), Double.valueOf("-396.5"), Double.valueOf("125"), Double.valueOf("1541.5"), Float.valueOf("180.0"), Float.valueOf("15.2"));
+                    //Inventory inv = i;
+                    pp.teleport(loc2);
                     Location loc = new Location(pp.getWorld(), Double.valueOf(x), Double.valueOf(y), Double.valueOf(z), Float.valueOf(yaw), Float.valueOf(pitch));
                     Inventory inv = i;
 

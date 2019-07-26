@@ -52,7 +52,7 @@ public class InventoryClickListener implements Listener {
 
             // p.sendMessage("You clicked at slot " + e.getRawSlot());
 
-            if (e.getRawSlot() == 1) {
+            if (e.getRawSlot() == 5) {
 
                 temp = 1;
 
@@ -63,7 +63,7 @@ public class InventoryClickListener implements Listener {
                 }
 
             }
-            if (e.getRawSlot() == 0) {
+            if (e.getRawSlot() == 3) {
 
                 temp = 1;
 
