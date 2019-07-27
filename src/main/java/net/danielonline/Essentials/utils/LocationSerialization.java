@@ -3,6 +3,7 @@ package net.danielonline.Essentials.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
 
 public class LocationSerialization {
 
@@ -25,6 +26,24 @@ public class LocationSerialization {
         float yaw = Float.parseFloat(vals[4]);
         float pitch = Float.parseFloat(vals[5]);
         return new Location(world, x, y, z, yaw, pitch);
+    }
+
+    public String getDirection(Player player) {
+        double rot = (player.getLocation().getYaw() - 90) % 360;
+        if (rot < 0) {
+            rot += 360.0;
+        }
+        if (0 <= rot && rot < 67.5) {
+            return "W";
+        } else if (67.5 <= rot && rot < 157.5) {
+            return "N";
+        } else if (157.5 <= rot && rot < 247.5) {
+            return "E";
+        } else if (247.5 <= rot && rot < 360.0) {
+            return "S";
+        } else {
+            return null;
+        }
     }
 
 }

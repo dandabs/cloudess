@@ -29,6 +29,7 @@ net/danielonline/Essentials/commands/C_addspawn.class
 net/danielonline/Essentials/utils/E.class
 net/danielonline/Essentials/handlers/menuInterface.class
 net/danielonline/Essentials/utils/S.class
+net/danielonline/Essentials/commands/C_pod.class
 net/danielonline/Essentials/commands/C_whois.class
 net/danielonline/Essentials/listeners/InventoryClickListener.class
 net/danielonline/Essentials/commands/C_help.class

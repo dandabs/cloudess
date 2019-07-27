@@ -27,9 +27,9 @@ commands:
       - ci
       - clearinventory
     permission: cc.player.clear
-  addspawn:
-    description: Add a spawn to the list
-    permission: cc.core.addspawn
   ccreload:
     description: Reload the CloudEss configuration
-    permission: cc.core.reload
+    permission: cc.plugin.reload
+  pod:
+    description: Administration for server core pods
+    permission: cc.core.pod

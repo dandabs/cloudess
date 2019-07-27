@@ -85,6 +85,7 @@ public class Essentials extends JavaPlugin {
         //this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
         this.getCommand("clear").setExecutor((CommandExecutor)new C_clear());
         this.getCommand("ccreload").setExecutor((CommandExecutor)new C_reload());
+        //this.getCommand("pod").setExecutor((CommandExecutor)new C_pod());
 
     }
 
