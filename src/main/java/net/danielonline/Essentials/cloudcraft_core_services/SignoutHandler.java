@@ -133,8 +133,7 @@ public class SignoutHandler {
         // check if player is banned
         if (Boolean.valueOf(banned)) {
 
-            //player.kickPlayer("You are dead.");
-            player.kickPlayer(C.Red + "You've been deathbanned!\n" + C.DRed + "What? Have you not watched SAO?");
+            player.kickPlayer("You are dead.");
 
         } else {
 
