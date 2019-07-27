@@ -30,10 +30,6 @@
             <id>dmulloy2-repo</id>
             <url>http://repo.dmulloy2.net/nexus/repository/public/</url>
         </repository>
-        <repository>
-            <id>example-repo</id>
-            <url>https://mail.vps.cloudcraftmc.org.uk/maven-repository/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -47,11 +43,6 @@
             <groupId>me.edge209.OnTime</groupId>
             <artifactId>OnTime</artifactId>
             <version>4.1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>net.mcjukebox.plugin</groupId>
-            <artifactId>MCJukebox</artifactId>
-            <version>2.6.5</version>
         </dependency>
         <dependency>
             <groupId>com.github.MilkBowl</groupId>

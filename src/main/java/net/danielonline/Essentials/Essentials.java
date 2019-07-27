@@ -78,8 +78,6 @@ public class Essentials extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new CreatureSpawnEventListener(), this);
 
-        getServer().getPluginManager().registerEvents(new EntityDamageEventListener(), this);
-
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
         //this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());

@@ -19,11 +19,9 @@ net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler.class
 net/danielonline/Essentials/listeners/InventoryOpenEventListener.class
 net/danielonline/Essentials/utils/H$TestHandler.class
 net/danielonline/Essentials/commands/C_clear.class
-net/danielonline/Essentials/listeners/EntityDamageEventListener.class
 net/danielonline/Essentials/cloudcraft_core_services/SignoutHandler$3.class
 net/danielonline/Essentials/cloudcraft_core_services/serverCore.class
 net/danielonline/Essentials/listeners/PlayerDeathEventListener.class
-net/danielonline/Essentials/listeners/EntityDamageEventListener$1.class
 net/danielonline/Essentials/utils/Configuration.class
 net/danielonline/Essentials/commands/C_addspawn.class
 net/danielonline/Essentials/utils/E.class
