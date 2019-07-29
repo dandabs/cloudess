@@ -33,3 +33,6 @@ commands:
   ccreload:
     description: Reload the CloudEss configuration
     permission: cc.core.reload
+  addpod:
+    description: Add a pod to the server core
+    permission: cc.core.addpod

@@ -25,7 +25,10 @@ public class PlayerDeathEventListener implements Listener {
             meta.setOwningPlayer(p);
             skull.setItemMeta(meta);
 
-            p.getKiller().getInventory().addItem(skull);
+            try {
+                p.getKiller().getInventory().addItem(skull);
+            } catch (NullPointerException npe) {
+            }
 
         }
 

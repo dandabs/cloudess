@@ -5,6 +5,10 @@ import net.danielonline.Essentials.Essentials;
 import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.utils.BukkitSerialization;
+import net.danielonline.Essentials.utils.Songs;
+import net.mcjukebox.plugin.bukkit.api.JukeboxAPI;
+import net.mcjukebox.plugin.bukkit.api.ResourceType;
+import net.mcjukebox.plugin.bukkit.api.models.Media;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -57,7 +61,7 @@ public class PlayerJoinEventListener implements Listener {
 
             host = "116.203.95.196";
             port = 3306;
-            database = "dockerconnect";
+            database = "essentials";
             susername = "dockerconnect";
             password = "chiicken";
 
@@ -119,6 +123,12 @@ public class PlayerJoinEventListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event)
     {
+
+        Media media = new Media(ResourceType.MUSIC, Songs.SAO_SWORDLAND);
+        media.setVolume(50);
+        JukeboxAPI.play(event.getPlayer(), media);
+
+        Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "jukebox music " + event.getPlayer().getName() + " " + Songs.SAO_SWORDLAND + "");
 
         event.setJoinMessage("");
 

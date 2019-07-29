@@ -12,8 +12,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public class PlayerUseListener implements Listener {
 
-    @EventHandler(priority= EventPriority.HIGH)
+    @EventHandler
     public void onPlayerUse(PlayerInteractEvent event){
+
         Player p = event.getPlayer();
 
         if(event.getItem().getType() == Material.COMMAND_BLOCK ||
@@ -22,6 +23,7 @@ public class PlayerUseListener implements Listener {
             new menuInterface().openInventory(p);
             event.setCancelled(true);
 
+        } else {
         }
     }
 

@@ -70,7 +70,7 @@ public class Essentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerRespawnEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerDropItemEventListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerUseListener(), this);
+        //getServer().getPluginManager().registerEvents(new PlayerUseListener(), this);
 
         getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
         getServer().getPluginManager().registerEvents(new InventoryMoveItemEventListener(), this);
@@ -83,6 +83,8 @@ public class Essentials extends JavaPlugin {
         //this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
         this.getCommand("clear").setExecutor((CommandExecutor)new C_clear());
         this.getCommand("ccreload").setExecutor((CommandExecutor)new C_reload());
+
+        this.getCommand("addpod").setExecutor((CommandExecutor) new C_addpod());
 
     }
 

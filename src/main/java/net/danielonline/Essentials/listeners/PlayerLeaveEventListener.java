@@ -1,11 +1,13 @@
 package net.danielonline.Essentials.listeners;
 
+import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -25,6 +27,14 @@ public class PlayerLeaveEventListener implements Listener {
             sendGet(event.getPlayer());
         }
         catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        InventoryClickListener.temp = 1;
+
+        try {
+            new SignoutHandler().signOut(event.getPlayer());
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

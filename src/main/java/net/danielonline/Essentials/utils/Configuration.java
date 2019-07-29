@@ -29,6 +29,7 @@ public class Configuration {
         config.addDefault("lang.join", "&6{&c+&6} &6%player%");
         config.addDefault("lang.quit", "&6{&c-&6} &6%player%");
         config.addDefault("lang.reload", "&b[CC] &6Plugin reloaded.");
+        config.addDefault("lang.reload", "&b[CC] &6Plugin reloaded.");
 
         config.options().copyDefaults(true);
         saveConfig();

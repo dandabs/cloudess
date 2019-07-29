@@ -1,19 +1,21 @@
 package net.danielonline.Essentials.cloudcraft_core_services;
 
+import net.citizensnpcs.api.CitizensAPI;
+import net.citizensnpcs.api.npc.NPC;
 import net.danielonline.Essentials.Essentials;
 import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.handlers.defaultInterface;
 import net.danielonline.Essentials.listeners.InventoryClickListener;
-import net.danielonline.Essentials.utils.Anvils;
-import net.danielonline.Essentials.utils.BukkitSerialization;
-import net.danielonline.Essentials.utils.Configuration;
-import net.danielonline.Essentials.utils.LocationSerialization;
+import net.danielonline.Essentials.utils.*;
+import net.mcjukebox.plugin.bukkit.api.JukeboxAPI;
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -42,6 +44,7 @@ public class SignoutHandler {
     private String inventory;
 
     private Connection connection;
+    public Connection connection2;
     private String host, database, susername, password;
     private int port;
 
@@ -59,15 +62,22 @@ public class SignoutHandler {
 
             host = "116.203.95.196";
             port = 3306;
-            database = "dockerconnect";
+            database = "essentials";
             susername = "dockerconnect";
             password = "chiicken";
 
             try {
                 openConnection();
                 Statement statement = connection.createStatement();
-                statement.executeUpdate("DELETE FROM corePlayers WHERE USERNAME = '" + username + "';");
-                statement.executeUpdate("INSERT INTO corePlayers (USERNAME, BANNED, LASTLOGOUT_X, LASTLOGOUT_Y, LASTLOGOUT_Z, LASTLOGOUT_YAW, LASTLOGOUT_PITCH) VALUES ('" + username + "', '" + banned + "', '" + (int) lastlogout_X + "', '" + (int) lastlogout_Y + "', '" +(int) lastlogout_Z + "', '" + lastlogout_yaw + "', '" + lastlogout_pitch + "');");
+                statement.executeUpdate("DELETE FROM `corePlayers` WHERE USERNAME = '" + username + "';");
+
+                //statement.executeUpdate("UPDATE `dockerconnect.corePlayers` SET `lastlogout_X` = '" + (int)lastlogout_X + "' WHERE `username` = '" + username + "';");
+                //statement.executeUpdate("UPDATE `dockerconnect.corePlayers` SET `lastlogout_Y` = '" + (int)lastlogout_Y + "' WHERE `username` = '" + username + "';");
+                //statement.executeUpdate("UPDATE `dockerconnect.corePlayers` SET `lastlogout_Z` = '" + (int)lastlogout_Z + "' WHERE `username` = '" + username + "';");
+                //statement.executeUpdate("UPDATE `dockerconnect.corePlayers` SET `lastlogout_YAW` = '" + lastlogout_yaw + "' WHERE `username` = '" + username + "';");
+                //statement.executeUpdate("UPDATE `dockerconnect.corePlayers` SET `lastlogout_PITCH` = '" + lastlogout_pitch + "' WHERE `username` = '" + username + "';");
+
+                statement.executeUpdate("INSERT INTO `corePlayers` (USERNAME, BANNED, LASTLOGOUT_X, LASTLOGOUT_Y, LASTLOGOUT_Z, LASTLOGOUT_YAW, LASTLOGOUT_PITCH) VALUES ('" + username + "', '" + banned + "', '" + lastlogout_X + "', '" + lastlogout_Y + "', '" + lastlogout_Z + "', '" + lastlogout_yaw + "', '" + lastlogout_pitch + "');");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
@@ -113,6 +123,41 @@ public class SignoutHandler {
 
         }
 
+        host = "116.203.95.196";
+        port = 3306;
+        database = "essentials";
+        susername = "dockerconnect";
+        password = "chiicken";
+
+        Statement stmt = null;
+        try {
+            openConnection();
+            stmt = connection.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+
+
+        }
+
+        try {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM tblPods WHERE `podMember` = '" + player.getUniqueId() + "';");
+
+            while (rs.next()) {
+
+                //String lastName = rs.getString("Lname");
+                //System.out.println(lastName + "\n");
+
+                new Pods().makeOffline(rs.getString("podID"));
+
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+
     }
 
     private static int getRandomNumberInRange(int min, int max) {
@@ -139,6 +184,95 @@ public class SignoutHandler {
             player.kickPlayer("You are dead.");
 
         } else {
+
+            host = "116.203.95.196";
+            port = 3306;
+            database = "essentials";
+            susername = "dockerconnect";
+            password = "chiicken";
+
+            Statement stmt = null;
+            try {
+                openConnection();
+                stmt = connection.createStatement();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+
+
+            }
+            List<String> l2 = new ArrayList<String>();
+            List<String> l2x = new ArrayList<String>();
+            List<String> l2y = new ArrayList<String>();
+            List<String> l2z = new ArrayList<String>();
+            List<String> l3 = new ArrayList<String>();
+            List<String> l4 = new ArrayList<String>();
+
+            try {
+                //ResultSet rs = stmt.executeQuery("SELECT * FROM tblPods;");
+                Statement statement = connection.createStatement();
+                ResultSet result = statement.executeQuery("SELECT * FROM tblPods;");
+                ResultSet rs = result;
+
+                while (rs.next()) {
+
+                    //String lastName = rs.getString("Lname");
+                    //System.out.println(lastName + "\n");
+
+                    l2.add(rs.getString("podID"));
+                    l2x.add(rs.getString("podX"));
+                    l2y.add(rs.getString("podY"));
+                    l2z.add(rs.getString("podZ"));
+                    l3.add(rs.getString("podMember"));
+
+                }
+
+                Statement statement1 = connection.createStatement();
+                ResultSet result1 = statement1.executeQuery("SELECT * FROM tblPods WHERE podMember IS NULL;");
+                ResultSet rs1 = result1;
+
+                while (rs1.next()) {
+
+                    //String lastName = rs.getString("Lname");
+                    //System.out.println(lastName + "\n");
+
+                    l4.add(rs1.getString("podID"));
+
+                }
+
+                if (!(l3.contains(player.getUniqueId().toString()))) {
+                    if (l3.size() != 0 || l2.size() == 0) {
+                        player.kickPlayer("§6Please reconnect to the server.\n§4This is an anti-bot verification test.");
+                    }
+                }
+
+                if (l3.size() != 0) {
+
+                    if (!l3.contains(player.getUniqueId().toString())) {
+
+                        stmt.executeUpdate("UPDATE `tblPods` SET `podMember` = '" + player.getUniqueId() + "' WHERE `podID` = '" + l4.get(0) + "';");
+
+                        NPC npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, player.getName());
+                        npc.spawn(new Location(player.getWorld(), Double.valueOf(l2x.get(0)), Double.valueOf(l2x.get(0)), Double.valueOf(l2x.get(0))));
+
+                        new Pods().makeOnline(l4.get(0));
+
+                    } else {
+                        new Pods().makeOnline(l2.get(l3.indexOf(player.getUniqueId().toString())));
+                    }
+
+                } else {
+                    new Pods().makeOnline(l2.get(l3.indexOf(player.getUniqueId().toString())));
+                } //new Pods().makeOnline(l2.get(0));
+
+                //new Pods().makeOnline(l2.get(0));
+
+
+            } catch (SQLException e) {
+
+                e.printStackTrace();
+
+            }
 
             //Bukkit.broadcastMessage("loc is " + loc().get(0));
 
@@ -183,9 +317,9 @@ public class SignoutHandler {
 
                 // new player is joining
 
-                player.sendTitle("§4Welcome to", "§bCloud§fCraft §5Online", 5, 10, 5);
-                player.sendTitle("§6Remember to log out using the menu", "", 5, 10, 5);
-                player.sendTitle("§6Tutorial now loading...", "", 5, 10, 5);
+                //player.sendTitle("§4Welcome to", "§bCloud§fCraft §5Online", 5, 10, 5);
+                //player.sendTitle("§6Remember to log out using the menu", "", 5, 10, 5);
+                //player.sendTitle("§6Tutorial now loading...", "", 5, 10, 5);
 
                 tempPlayersX.put(player, lastlogout_X);
                 tempPlayersY.put(player, lastlogout_Y);
@@ -197,8 +331,7 @@ public class SignoutHandler {
                     public void run() {
 
                         // ask player what they want to do (eg. log on, log off)
-                        InventoryClickListener.temp = 0;
-                        new defaultInterface().openInventory(player);
+                        Bukkit.dispatchCommand(pp, "spawn");
 
                     }
                 }, 20L);
@@ -234,7 +367,7 @@ public class SignoutHandler {
 
         host = "116.203.95.196";
         port = 3306;
-        database = "dockerconnect";
+        database = "essentials";
         susername = "dockerconnect";
         password = "chiicken";
 
@@ -256,9 +389,10 @@ public class SignoutHandler {
 
                     Location loc = new Location(pp.getWorld(), Double.valueOf("-396.5"), Double.valueOf("125"), Double.valueOf("1541.5"), Float.valueOf("180.0"), Float.valueOf("15.2"));
                     //Inventory inv = i;
-                    pp.teleport(loc);
+                    Bukkit.dispatchCommand(pp, "spawn");
+                    //pp.teleport(loc);
                     //new BukkitSerialization().restoreInventory(player);
-                    pp.sendTitle("Title", "Subtitle", 1, 4, 1);
+                    //pp.sendTitle("Title", "Subtitle", 1, 4, 1);
 
                 } else {
 
@@ -272,8 +406,11 @@ public class SignoutHandler {
                     new BukkitSerialization().restoreInventory(player);
                     //pp.getInventory().setContents(inv.getContents());
                     //pp.updateInventory();
-                    pp.sendTitle("Title", "Subtitle", 1, 4, 1);
+                    //pp.sendTitle("Title", "Subtitle", 1, 4, 1);
                 }
+
+                //JukeboxAPI.stopMusic(player);
+                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "jukebox stop " + pp.getName() + "");
 
                 Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', Essentials.getInstance().getConfig().getString("lang.join")).replace("%player%", player.getName()));
 
@@ -303,6 +440,21 @@ public class SignoutHandler {
             }
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database, this.susername, this.password);
+        }
+
+    }
+
+    public void openConnection2() throws SQLException, ClassNotFoundException {
+        if (connection2 != null && !connection2.isClosed()) {
+            return;
+        }
+
+        synchronized (this) {
+            if (connection2 != null && !connection2.isClosed()) {
+                return;
+            }
+            Class.forName("com.mysql.jdbc.Driver");
+            connection2 = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + "essentials", this.susername, this.password);
         }
 
     }
