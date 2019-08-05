@@ -80,12 +80,15 @@ public class Essentials extends JavaPlugin {
 
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
-        //this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
+        this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
         this.getCommand("clear").setExecutor((CommandExecutor)new C_clear());
+
+        this.getCommand("rules").setExecutor((CommandExecutor)new C_rules());
+
         this.getCommand("ccreload").setExecutor((CommandExecutor)new C_reload());
 
         this.getCommand("addpod").setExecutor((CommandExecutor) new C_addpod());
-
+        this.getCommand("nword").setExecutor((CommandExecutor) new C_nword());
     }
 
     /*private boolean setupEconomy() {

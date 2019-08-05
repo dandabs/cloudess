@@ -1,5 +1,6 @@
 package net.danielonline.Essentials.utils;
 import org.bukkit.*;
+import org.omg.CORBA.Object;
 
 public class C
 {
@@ -28,6 +29,7 @@ public class C
     public static String Yellow;
     public static String Split;
     public static String Prefix;
+    public static String PinkPrefix;
 
     static {
         C.Head = ChatColor.AQUA.toString();
@@ -55,6 +57,7 @@ public class C
         C.Yellow = ChatColor.YELLOW.toString();
         C.Split = "\ufffd";
         C.Prefix = C.DGray + "[" + C.Aqua + "C" + C.White + "C" + C.DGray + "] " + C.Gray;
+        C.PinkPrefix = C.DGray + "[" + C.Purple + "C" + C.White + "C" + C.DGray + "] " + C.Gray;
     }
 
     public static String strip(final String Text) {
