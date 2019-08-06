@@ -1,6 +1,7 @@
 package net.danielonline.Essentials.listeners;
 
 import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -47,20 +48,15 @@ public class PlayerLeaveEventListener implements Listener {
 
     private void sendGet(Player player) throws Exception
     {
-        String url = "https://ccessentials.glitch.me/api/quit/" + player.getName();
+        String url = "https://ccessentials.glitch.me/api/quit/" + player.getName() + "/" + Bukkit.getServer().getOnlinePlayers().size();
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection)obj.openConnection();
 
-
         con.setRequestMethod("GET");
-
-
         con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
         int responseCode = con.getResponseCode();
-
-
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
@@ -72,5 +68,4 @@ public class PlayerLeaveEventListener implements Listener {
         }
         in.close();
     }
-
 }

@@ -1,6 +1,6 @@
 package net.danielonline.Essentials.listeners;
 
-import com.sun.tools.javac.util.Convert;
+//import com.sun.tools.javac.util.Convert;
 import net.danielonline.Essentials.Essentials;
 import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import net.danielonline.Essentials.external.SQL;
@@ -171,20 +171,16 @@ public class PlayerJoinEventListener implements Listener {
 
     private void sendGet(Player player) throws Exception
     {
-        String url = "https://ccessentials.glitch.me/api/join/" + player.getName();
+        // https://stackoverflow.com/a/25031189/10160296 for player count //
+        String url = "https://ccessentials.glitch.me/api/join/" + player.getName() + "/" + Bukkit.getServer().getOnlinePlayers().size();
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection)obj.openConnection();
 
-
         con.setRequestMethod("GET");
-
-
         con.setRequestProperty("User-Agent", "Mozilla/6.9");
 
         int responseCode = con.getResponseCode();
-
-
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
@@ -209,7 +205,6 @@ public class PlayerJoinEventListener implements Listener {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database, this.susername, this.password);
         }
-
     }
 
 }
