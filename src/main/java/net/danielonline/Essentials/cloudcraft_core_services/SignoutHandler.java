@@ -369,7 +369,7 @@ public class SignoutHandler {
 
         host = "116.203.95.196";
         port = 3306;
-        database = "dockerconnect";
+        database = "essentials";
         susername = "dockerconnect";
         password = "chiicken";
 
@@ -380,7 +380,7 @@ public class SignoutHandler {
             //Statement statement3 = connection.createStatement();
             ResultSet result5 = statement.executeQuery("SELECT * FROM tblPods WHERE podMember = '" + player.getUniqueId() + "';");
             ResultSet rs5 = result5;
-            List<String> l5 = null;
+            List<String> l5 = new ArrayList<String>();
 
             while (rs5.next()) {
 
