@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class InventoryClickListener implements Listener {
 
@@ -67,7 +68,11 @@ public class InventoryClickListener implements Listener {
 
                 temp = 1;
 
-                new SignoutHandler().signIn(p); // signs the player in
+                try {
+                    new SignoutHandler().signIn(p); // signs the player in
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
 
             }
 
