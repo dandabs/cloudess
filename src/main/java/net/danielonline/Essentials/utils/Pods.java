@@ -128,7 +128,7 @@ public class Pods {
 
             }
 
-            Bukkit.broadcastMessage(String.valueOf(lx + 1) + "." + String.valueOf(ly - 1) + "." + String.valueOf(lz));
+            //Bukkit.broadcastMessage(String.valueOf(lx + 1) + "." + String.valueOf(ly - 1) + "." + String.valueOf(lz));
 
             Block b = new Location(w, (lx + 1), (ly - 1), lz).getBlock();
             Sign i = (Sign) b.getState();

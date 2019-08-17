@@ -378,7 +378,7 @@ public class SignoutHandler {
             Statement statement = connection.createStatement();
 
             //Statement statement3 = connection.createStatement();
-            ResultSet result5 = statement.executeQuery("SELECT * FROM tblPods WHERE podMember IS NULL;");
+            ResultSet result5 = statement.executeQuery("SELECT * FROM tblPods WHERE podMember = '" + player.getUniqueId() + "';");
             ResultSet rs5 = result5;
             List<String> l5 = null;
 

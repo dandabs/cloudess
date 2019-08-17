@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="" />
+    <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/Pods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/Pods.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +35,6 @@
         <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="70" />
-    <option name="y" value="23" />
-    <option name="width" value="1400" />
-    <option name="height" value="1009" />
   </component>
   <component name="ProjectId" id="1PYLuxaTUtWKLSw2g5KfI66vBd4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -156,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566052341276</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Build bug fixes">
+      <created>1566052854279</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1566052854279</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
