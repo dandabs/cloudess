@@ -21,6 +21,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.Team;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -137,6 +138,8 @@ public class PlayerJoinEventListener implements Listener {
         } catch (IllegalStateException e) {}
 
         Player player = event.getPlayer();
+
+        Essentials.getTeam().addPlayer(player);
 
         try {
             sendGet(event.getPlayer());

@@ -7,7 +7,10 @@ import net.danielonline.Essentials.listeners.*;
 import net.danielonline.Essentials.utils.*;
 import net.danielonline.Essentials.commands.*;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.*;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -15,6 +18,8 @@ import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import net.milkbowl.vault.permission.Permission;
+import org.bukkit.scoreboard.NameTagVisibility;
+import org.bukkit.scoreboard.Team;
 
 import java.util.logging.Logger;
 
@@ -25,13 +30,17 @@ public class Essentials extends JavaPlugin {
     public Essentials() {}
     private static Essentials instance;
 
+    private static Team team = Bukkit.getScoreboardManager().getMainScoreboard().registerNewTeam("cloudcraft");
+
     @Override
     public void onEnable() {
         instance = this;
         S.enable();
         new Configuration().loadConfiguration();
         register();
-
+        team.setDisplayName(ChatColor.WHITE + "");
+        team.setNameTagVisibility(NameTagVisibility.NEVER);
+        
         /*if (!setupEconomy() ) {
             Statics.log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
@@ -89,6 +98,12 @@ public class Essentials extends JavaPlugin {
 
         this.getCommand("addpod").setExecutor((CommandExecutor) new C_addpod());
         this.getCommand("nword").setExecutor((CommandExecutor) new C_nword());
+    }
+
+    public static Team getTeam() {
+
+        return team;
+
     }
 
     /*private boolean setupEconomy() {
