@@ -367,21 +367,38 @@ public class SignoutHandler {
 
     public void signIn(Player player) throws SQLException {
 
-        Statement statement1 = connection.createStatement();
-        ResultSet result1 = statement1.executeQuery("SELECT * FROM tblPods WHERE podMember IS NULL;");
-        ResultSet rs1 = result1;
-        List<String> l4 = null;
+        host = "116.203.95.196";
+        port = 3306;
+        database = "essentials";
+        susername = "dockerconnect";
+        password = "chiicken";
 
-        while (rs1.next()) {
+        try {
+            openConnection();
+            Statement statement = connection.createStatement();
 
-            //String lastName = rs.getString("Lname");
-            //System.out.println(lastName + "\n");
+            //Statement statement3 = connection.createStatement();
+            ResultSet result5 = statement.executeQuery("SELECT * FROM tblPods WHERE podMember IS NULL;");
+            ResultSet rs5 = result5;
+            List<String> l5 = null;
 
-            l4.add(rs1.getString("podID"));
+            while (rs5.next()) {
 
+                //String lastName = rs.getString("Lname");
+                //System.out.println(lastName + "\n");
+
+                l5.add(rs5.getString("podID"));
+
+            }
+
+            new Pods().makeOnline(l5.get(0));
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
 
-        new Pods().makeOnline(l4.get(0));
+
+
 
         pp = player;
 
