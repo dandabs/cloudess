@@ -67,9 +67,9 @@ public class Essentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerLeaveEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerBedEnterEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerBedLeaveEventListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerRespawnEventListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerDropItemEventListener(), this);
+        //getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
+        //getServer().getPluginManager().registerEvents(new PlayerRespawnEventListener(), this);
+        //getServer().getPluginManager().registerEvents(new PlayerDropItemEventListener(), this);
         //getServer().getPluginManager().registerEvents(new PlayerUseListener(), this);
 
         getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
@@ -81,7 +81,7 @@ public class Essentials extends JavaPlugin {
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
         this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
-        this.getCommand("clear").setExecutor((CommandExecutor)new C_clear());
+        //this.getCommand("clear").setExecutor((CommandExecutor)new C_clear());
 
         this.getCommand("rules").setExecutor((CommandExecutor)new C_rules());
 

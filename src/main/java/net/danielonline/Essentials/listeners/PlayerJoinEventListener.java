@@ -149,7 +149,7 @@ public class PlayerJoinEventListener implements Listener {
         ItemMeta menuItemMeta = menuItem.getItemMeta();
         menuItemMeta.setDisplayName(ChatColor.DARK_GREEN + (ChatColor.BOLD + "Menu Interface"));
         menuItem.setItemMeta(menuItemMeta);
-        event.getPlayer().getInventory().setItem(8, new ItemStack(menuItem));
+        //event.getPlayer().getInventory().setItem(8, new ItemStack(menuItem));
 
         username = "" + player.getUniqueId();
         lastlogout_X = player.getLocation().getX();
