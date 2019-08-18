@@ -139,7 +139,7 @@ public class PlayerJoinEventListener implements Listener {
 
         Player player = event.getPlayer();
 
-        Essentials.getTeam().addPlayer(player);
+        //Essentials.getTeam().addPlayer(player);
 
         try {
             sendGet(event.getPlayer());

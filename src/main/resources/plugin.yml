@@ -43,6 +43,12 @@ commands:
     aliases:
       - pl
       - pluginlist
-  rules:
-    description: Currently broken
-    permission: cc.being.gay.like.dan.which.is.literally.impossible.lol
+  punish:
+    description: Open the punishment menu for the specified user.
+    aliases:
+      - ban
+      - tempban
+      - mute
+      - tempmute
+      - kick
+    permission: cc.staff.punish
