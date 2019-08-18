@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/listeners/PlayerChatEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566142025460</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added dependencies for SmartInvs">
+      <created>1566143280541</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1566143280541</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,7 +244,8 @@
     <MESSAGE value="Hide displayname" />
     <MESSAGE value="Punishment System" />
     <MESSAGE value="Build update bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build update bug fixes" />
+    <MESSAGE value="Added dependencies for SmartInvs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dependencies for SmartInvs" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
