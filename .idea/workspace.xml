@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="82eaec31-9ea6-479a-b85e-1022380f10d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/danielonline/Essentials/utils/C.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Essentials-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/listeners/PlayerBedLeaveEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/listeners/PlayerBedLeaveEventListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/utils/S.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/danielonline/Essentials/utils/S.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566140367668</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Build update bug fixes">
+      <created>1566142025460</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1566142025460</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +236,8 @@
     <MESSAGE value="ArrayList definition bug fixes" />
     <MESSAGE value="Hide displayname" />
     <MESSAGE value="Punishment System" />
-    <option name="LAST_COMMIT_MESSAGE" value="Punishment System" />
+    <MESSAGE value="Build update bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build update bug fixes" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
