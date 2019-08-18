@@ -30,14 +30,6 @@ commands:
   addpod:
     description: Add a pod to the server core
     permission: cc.core.addpod
-  nword:
-    description: N-WORDS ARE NOT TOLERATED HERE!!!!!!
-    aliases:
-      - nigger
-      - nig
-      - niger
-      - ni
-  # just all the racist slurs, k? DONT DO THIS, THIS IS STUPID
   plugins:
     description: See our plugins.
     aliases:
