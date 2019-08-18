@@ -25,7 +25,7 @@ public class PlayerChatEventListener implements Listener {
         catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("player has chatted");
+        
     }
 
 

@@ -79,6 +79,7 @@ public class Essentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerLeaveEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerBedEnterEventListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerBedLeaveEventListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerChatEvent(), this);
         //getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
         //getServer().getPluginManager().registerEvents(new PlayerRespawnEventListener(), this);
         //getServer().getPluginManager().registerEvents(new PlayerDropItemEventListener(), this);
