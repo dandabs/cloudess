@@ -243,6 +243,10 @@ public class SignoutHandler {
                 if (!(l3.contains(player.getUniqueId().toString()))) {
                     if (l3.size() != 0 || l2.size() == 0) {
                         player.kickPlayer("§6Please reconnect to the server.\n§4This is an anti-bot verification test.");
+                    } else if (l3.size() == 0) {
+
+                        player.kickPlayer("§6There are no available pods.\n§4Please contact a staff member on Discord.");
+
                     }
                 }
 
@@ -255,14 +259,14 @@ public class SignoutHandler {
                         NPC npc = CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, player.getName());
                         npc.spawn(new Location(player.getWorld(), Double.valueOf(l2x.get(0)), Double.valueOf(l2x.get(0)), Double.valueOf(l2x.get(0))));
 
-                        new Pods().makeOnline(l4.get(0));
+                        new Pods().makePending(l4.get(0));
 
                     } else {
-                        new Pods().makeOnline(l2.get(l3.indexOf(player.getUniqueId().toString())));
+                        new Pods().makePending(l2.get(l3.indexOf(player.getUniqueId().toString())));
                     }
 
                 } else {
-                    new Pods().makeOnline(l2.get(l3.indexOf(player.getUniqueId().toString())));
+                    new Pods().makePending(l2.get(l3.indexOf(player.getUniqueId().toString())));
                 } //new Pods().makeOnline(l2.get(0));
 
                 //new Pods().makeOnline(l2.get(0));
@@ -291,7 +295,9 @@ public class SignoutHandler {
 
             //Location l = new Location(Bukkit.getServer().getWorld("world"), Double.parseDouble("-393.5"), Double.parseDouble("112"), Double.parseDouble("1562.5"), Float.parseFloat("93.355"), Float.parseFloat("6.338"));
 
-            player.teleport(l);
+            //player.teleport(l);
+
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spawn " + player.getName());
 
             File f = new File(Essentials.getInstance().getDataFolder().getAbsolutePath(), "players/inventories/" + player.getName() + ".yml");
 
@@ -359,7 +365,40 @@ public class SignoutHandler {
         }
     };
 
-    public void signIn(Player player) {
+    public void signIn(Player player) throws SQLException {
+
+        host = "116.203.95.196";
+        port = 3306;
+        database = "essentials";
+        susername = "dockerconnect";
+        password = "chiicken";
+
+        try {
+            openConnection();
+            Statement statement = connection.createStatement();
+
+            //Statement statement3 = connection.createStatement();
+            ResultSet result5 = statement.executeQuery("SELECT * FROM tblPods WHERE podMember = '" + player.getUniqueId() + "';");
+            ResultSet rs5 = result5;
+            List<String> l5 = new ArrayList<String>();
+
+            while (rs5.next()) {
+
+                //String lastName = rs.getString("Lname");
+                //System.out.println(lastName + "\n");
+
+                l5.add(rs5.getString("podID"));
+
+            }
+
+            new Pods().makeOnline(l5.get(0));
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
 
         pp = player;
 
@@ -402,7 +441,8 @@ public class SignoutHandler {
                     Location loc = new Location(pp.getWorld(), Double.valueOf(x), Double.valueOf(y), Double.valueOf(z), Float.valueOf(yaw), Float.valueOf(pitch));
                     Inventory inv = i;
 
-                    pp.teleport(loc);
+                    Bukkit.dispatchCommand(pp, "spawn");
+                    //pp.teleport(loc);
                     new BukkitSerialization().restoreInventory(player);
                     //pp.getInventory().setContents(inv.getContents());
                     //pp.updateInventory();

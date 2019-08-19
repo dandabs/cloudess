@@ -20,12 +20,6 @@ commands:
       - cloudess
       - cc
       - about
-  clear:
-    description: Clear your inventory
-    aliases:
-      - clearinv
-      - ci
-      - clearinventory
     permission: cc.player.clear
   addspawn:
     description: Add a spawn to the list
@@ -36,19 +30,17 @@ commands:
   addpod:
     description: Add a pod to the server core
     permission: cc.core.addpod
-  nword:
-    description: N-WORDS ARE NOT TOLERATED HERE!!!!!!
-    aliases:
-      - nigger
-      - nig
-      - niger
-      - ni
-  # just all the racist slurs, k? DONT DO THIS, THIS IS STUPID
   plugins:
     description: See our plugins.
     aliases:
       - pl
       - pluginlist
-  rules:
-    description: Currently broken
-    permission: cc.being.gay.like.dan.which.is.literally.impossible.lol
+  punish:
+    description: Open the punishment menu for the specified user.
+    aliases:
+      - ban
+      - tempban
+      - mute
+      - tempmute
+      - kick
+    permission: cc.staff.punish

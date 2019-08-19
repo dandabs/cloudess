@@ -3,7 +3,7 @@ version: DEV
 main: net.danielonline.Essentials.Essentials
 load: STARTUP
 author: dandabs
-depend: [ProtocolLib, Vault, LiteBans]
+depend: [ProtocolLib, Vault, SmartInvs, Litebans]
 api-version: 1.13
 authors:
   - pyxxl.
@@ -20,12 +20,6 @@ commands:
       - cloudess
       - cc
       - about
-  clear:
-    description: Clear your inventory
-    aliases:
-      - clearinv
-      - ci
-      - clearinventory
     permission: cc.player.clear
   addspawn:
     description: Add a spawn to the list
@@ -36,13 +30,17 @@ commands:
   addpod:
     description: Add a pod to the server core
     permission: cc.core.addpod
-  34e61a83-71fb-4374-b6c5-e6a089c504ac:
-    description: N-WORDS ARE NOT TOLERATED HERE!!!!!!
   plugins:
     description: See our plugins.
     aliases:
       - pl
       - pluginlist
-  rules:
-    description: Currently broken
-    permission: cc.being.gay.like.dan.which.is.literally.impossible.lol
+  punish:
+    description: Open the punishment menu for the specified user.
+    aliases:
+      - ban
+      - tempban
+      - mute
+      - tempmute
+      - kick
+    permission: cc.staff.punish

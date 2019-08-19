@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <repositories>
@@ -20,7 +20,7 @@
         </repository>
         <repository>
             <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <url>https://jitpack.io/</url>
         </repository>
         <repository>
             <id>wesjd-repo</id>
@@ -41,6 +41,11 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.ruany</groupId>
+            <artifactId>LiteBansAPI</artifactId>
+            <version>0.3</version>
+        </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -80,7 +85,16 @@
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>me.wolfyscript.utilities</groupId>
+            <artifactId>WolfyUtilities</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.minuskube.inv</groupId>
+            <artifactId>smart-invs</artifactId>
+            <version>1.2.6</version>
+        </dependency>
     </dependencies>
-
 
 </project>

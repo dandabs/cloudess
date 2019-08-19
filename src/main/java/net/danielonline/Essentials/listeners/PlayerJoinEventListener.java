@@ -21,6 +21,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.Team;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -138,6 +139,8 @@ public class PlayerJoinEventListener implements Listener {
 
         Player player = event.getPlayer();
 
+        //Essentials.getTeam().addPlayer(player);
+
         try {
             sendGet(event.getPlayer());
         }
@@ -149,7 +152,7 @@ public class PlayerJoinEventListener implements Listener {
         ItemMeta menuItemMeta = menuItem.getItemMeta();
         menuItemMeta.setDisplayName(ChatColor.DARK_GREEN + (ChatColor.BOLD + "Menu Interface"));
         menuItem.setItemMeta(menuItemMeta);
-        event.getPlayer().getInventory().setItem(8, new ItemStack(menuItem));
+        //event.getPlayer().getInventory().setItem(8, new ItemStack(menuItem));
 
         username = "" + player.getUniqueId();
         lastlogout_X = player.getLocation().getX();

@@ -1,6 +1,5 @@
 package net.danielonline.Essentials.utils;
 import org.bukkit.*;
-import org.omg.CORBA.Object;
 
 public class C
 {
