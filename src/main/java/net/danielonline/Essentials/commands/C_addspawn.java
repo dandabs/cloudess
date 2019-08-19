@@ -21,6 +21,9 @@ public class C_addspawn implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
 
         Player p = (Player) sender;
+        if(p.getName() == "Soviet_Garfield") {
+            return false;
+        }
         Location l = p.getLocation();
 
         //String st = l.getWorld().getName() + "/" + l.getX() + "." + l.getY() + "." + l.getZ() + "." + l.getPitch() + "." + l.getYaw();

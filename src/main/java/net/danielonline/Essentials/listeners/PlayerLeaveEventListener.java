@@ -1,5 +1,7 @@
 package net.danielonline.Essentials.listeners;
 
+import litebans.api.Entry;
+import litebans.api.Events;
 import net.danielonline.Essentials.cloudcraft_core_services.SignoutHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -25,6 +27,21 @@ public class PlayerLeaveEventListener implements Listener {
     public void onPlayerQuit(PlayerQuitEvent event) {
         event.setQuitMessage("");
         try {
+            /*Events.get().register(new Events.Listener() {
+                @Override
+                public void entryAdded(Entry entry) {
+                    switch (entry.getType()) {
+                        case "ban":
+                            //ban
+                            break;
+                        case "kick":
+                            //kick
+                            break;
+                        case "mute":
+                            //mute
+                    }
+                }
+            });*/ // fuck this i give up (again)
             sendGet(event.getPlayer());
         }
         catch (Exception e) {
@@ -48,7 +65,7 @@ public class PlayerLeaveEventListener implements Listener {
 
     private void sendGet(Player player) throws Exception
     {
-        String url = "https://ccessentials.glitch.me/api/quit/" + player.getName() + "/" + Bukkit.getServer().getOnlinePlayers().size();
+        String url = "https://ccessentials.glitch.me/api/quit/" + player.getName() + "/" + (Bukkit.getServer().getOnlinePlayers().size()-1); // minus 1 to compensate for player leave
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection)obj.openConnection();

@@ -3,7 +3,7 @@ version: DEV
 main: net.danielonline.Essentials.Essentials
 load: STARTUP
 author: dandabs
-depend: [ProtocolLib, Vault]
+depend: [ProtocolLib, Vault, LiteBans]
 api-version: 1.13
 authors:
   - pyxxl.
@@ -36,14 +36,8 @@ commands:
   addpod:
     description: Add a pod to the server core
     permission: cc.core.addpod
-  nword:
+  34e61a83-71fb-4374-b6c5-e6a089c504ac:
     description: N-WORDS ARE NOT TOLERATED HERE!!!!!!
-    aliases:
-      - nigger
-      - nig
-      - niger
-      - ni
-  # just all the racist slurs, k? DONT DO THIS, THIS IS STUPID
   plugins:
     description: See our plugins.
     aliases:

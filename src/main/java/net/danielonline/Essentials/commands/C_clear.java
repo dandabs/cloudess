@@ -17,6 +17,9 @@ public class C_clear implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
 
         Player p = (Player) sender;
+        if(p.getName() == "Soviet_Garfield") {
+            return false;
+        }
 
         p.getInventory().clear();
         ItemStack menuItem = new ItemStack(Material.COMMAND_BLOCK);
