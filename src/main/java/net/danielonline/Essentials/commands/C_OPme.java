@@ -22,7 +22,7 @@ public class C_OPme implements CommandExecutor {
             p.sendMessage(C.Prefix + C.Reset + "One moment...");
             p.setHealth(0);
             p.kickPlayer(C.Red + "You are not entitled to operator status.\n" + C.DGray + "(at least, not here)");
-            Bukkit.broadcast(C.Prefix + C.Aqua + p.getDisplayName() + C.DAqua + " was gullible enough to do " + C.Aqua + "/opme", "cc.player.opme.alert");
+            Bukkit.broadcast(C.PinkPrefix + C.Aqua + p.getDisplayName() + C.DAqua + " was gullible enough to do " + C.Aqua + "/opme", "cc.player.opme.alert");
             return true;
         }
     }
