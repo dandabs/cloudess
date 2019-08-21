@@ -2,6 +2,9 @@ package net.danielonline.Essentials;
 
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
+import io.sentry.Sentry;
+import io.sentry.SentryClient;
+import io.sentry.SentryClientFactory;
 import me.wolfyscript.utilities.api.WolfyUtilities;
 import me.wolfyscript.utilities.api.config.Config;
 import me.wolfyscript.utilities.api.config.ConfigAPI;
@@ -37,6 +40,8 @@ public class Essentials extends JavaPlugin {
 
     private ProtocolManager protocolManager;
 
+    private static SentryClient sentry;
+
     public Essentials() {}
     private static Essentials instance;
 
@@ -56,6 +61,16 @@ public class Essentials extends JavaPlugin {
         api.setCONSOLE_PREFIX("[CC] ");
 
         new SQL().enable();
+
+        // You can also manually provide the DSN to the ``init`` method.
+        Sentry.init("https://6c6b4206fcd94b47b1abf0f2fcfc98c4@sentry.io/1537244");
+
+        /*
+         It is possible to go around the static ``Sentry`` API, which means
+         you are responsible for making the SentryClient instance available
+         to your code.
+         */
+        sentry = SentryClientFactory.sentryClient();
 
     }
 
